@@ -1147,6 +1147,12 @@ p { margin-bottom: var(--space-md); }
 }
 
 /* --- Responsive --- */
+/* --- Tarifs table scroll wrapper --- */
+.tarifs-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 1024px) {
   .grid--4 { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-2xl); }
@@ -1270,7 +1276,8 @@ p { margin-bottom: var(--space-md); }
   }
 
   .grid--2,
-  .grid--3 {
+  .grid--3,
+  .grid--4 {
     grid-template-columns: 1fr;
   }
 
@@ -1354,6 +1361,58 @@ p { margin-bottom: var(--space-md); }
   .cta-banner p {
     font-size: 0.95rem;
   }
+
+  /* Steps/Timeline */
+  .step-item {
+    gap: var(--space-md);
+  }
+
+  .step-item::before {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .step-item:not(:last-child)::after {
+    left: 17px;
+    top: 58px;
+  }
+
+  /* FAQ */
+  .faq-question {
+    padding: var(--space-md);
+    font-size: 0.92rem;
+  }
+
+  .faq-answer-inner {
+    padding: 0 var(--space-md) var(--space-md);
+    font-size: 0.92rem;
+  }
+
+  /* Tarifs table */
+  .tarifs-table th,
+  .tarifs-table td {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.85rem;
+  }
+
+  /* Info card button */
+  .info-card .btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Contact map */
+  .contact-grid iframe {
+    height: 300px !important;
+  }
+
+  /* Profile ring on equipe page */
+  .profile-ring {
+    margin-bottom: var(--space-lg) !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1400,6 +1459,47 @@ p { margin-bottom: var(--space-md); }
   .cta-banner h2 {
     font-size: 1.4rem;
   }
+
+  .step-item {
+    gap: var(--space-sm);
+  }
+
+  .step-item::before {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .step-item:not(:last-child)::after {
+    left: 15px;
+    top: 52px;
+  }
+
+  .faq-question {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.88rem;
+  }
+
+  .faq-answer-inner {
+    padding: 0 var(--space-md) var(--space-md);
+    font-size: 0.88rem;
+  }
+}
+
+/* --- Legal/prose lists (e.g., mentions-legales) --- */
+.container--narrow ul li {
+  padding: var(--space-xs) 0;
+  color: var(--color-text-light);
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.container--narrow ul li::before {
+  content: '•';
+  position: absolute;
+  left: var(--space-sm);
+  color: var(--color-primary);
+  font-weight: 700;
 }
 
 /* --- Utility animations --- */
