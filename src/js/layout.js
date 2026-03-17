@@ -200,7 +200,14 @@ export function initLayout(activePage = '') {
 function initMobileMenu() {
   const toggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('main-nav');
+  const header = document.getElementById('site-header');
   if (!toggle || !nav) return;
+
+  // Move nav outside header so position:fixed works correctly
+  // (backdrop-filter on header breaks position:fixed for children)
+  if (header && window.matchMedia('(max-width: 768px)').matches) {
+    document.body.appendChild(nav);
+  }
 
   toggle.addEventListener('click', () => {
     toggle.classList.toggle('active');
