@@ -1167,6 +1167,8 @@ p { margin-bottom: var(--space-md); }
     transition: transform var(--transition-base);
     overflow-y: auto;
     gap: 0;
+    z-index: 9999;
+    -webkit-overflow-scrolling: touch;
   }
 
   .main-nav.open {
