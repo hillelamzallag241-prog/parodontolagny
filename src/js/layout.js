@@ -208,12 +208,48 @@ function initMobileMenu() {
     document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Close on link click
-  nav.querySelectorAll('a:not(.nav-link)').forEach(link => {
+  // Close on sub-link click (dropdown items & standalone links)
+  nav.querySelectorAll('.dropdown a, a.nav-link:not(.nav-link--parent)').forEach(link => {
     link.addEventListener('click', () => {
       toggle.classList.remove('active');
       nav.classList.remove('open');
       document.body.style.overflow = '';
+    });
+  });
+
+  // Mobile dropdown accordion toggle
+  nav.querySelectorAll('.nav-item').forEach(item => {
+    const link = item.querySelector('.nav-link');
+    const dropdown = item.querySelector('.dropdown');
+    if (!link || !dropdown) return;
+
+    // Mark parent links
+    link.classList.add('nav-link--parent');
+
+    link.addEventListener('click', (e) => {
+      // Only act as accordion on mobile
+      if (window.innerWidth > 768) return;
+      e.preventDefault();
+
+      const isOpen = item.classList.contains('open');
+
+      // Close all other open items
+      nav.querySelectorAll('.nav-item.open').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('open');
+          const dd = other.querySelector('.dropdown');
+          if (dd) dd.style.maxHeight = '0';
+        }
+      });
+
+      // Toggle current item
+      if (isOpen) {
+        item.classList.remove('open');
+        dropdown.style.maxHeight = '0';
+      } else {
+        item.classList.add('open');
+        dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
+      }
     });
   });
 }
