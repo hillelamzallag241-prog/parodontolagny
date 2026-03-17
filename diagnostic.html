@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diagnostic Parodontal | Parodonto'Lagny</title>
   <meta name="description" content="Le diagnostic parodontal : sondage, radiographies et bilan complet. Découvrez comment nous évaluons la santé de vos gencives au cabinet Parodonto'Lagny.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -81,7 +83,22 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO, injectMedicalPageSchema } from '/src/js/seo.js';
     initLayout('maladies');
+    initSEO({
+      path: '/diagnostic.html',
+      title: "Diagnostic Parodontal | Bilan Complet | Parodonto'Lagny",
+      description: "Le diagnostic parodontal au cabinet Parodonto'Lagny : sondage parodontal, radiographies et bilan complet. Première étape vers des gencives saines.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Maladies Parodontales', url: '/maladies-parodontales.html' },
+        { name: 'Diagnostic', url: '/diagnostic.html' }
+      ]
+    });
+    injectMedicalPageSchema(
+      'Diagnostic parodontal',
+      'Guide complet du bilan parodontal : entretien clinique, examen des gencives, sondage parodontal, radiographies et plan de traitement.'
+    );
   </script>
 </body>
 </html>

@@ -272,6 +272,7 @@ export function injectCanonical(path = '') {
 
 // --- Inject Open Graph meta tags ---
 export function injectOpenGraph({ title, description, url, type = 'website' }) {
+  const ogImageUrl = `${SITE_URL}/og-image.png`;
   const tags = {
     'og:title': title,
     'og:description': description,
@@ -279,9 +280,14 @@ export function injectOpenGraph({ title, description, url, type = 'website' }) {
     'og:type': type,
     'og:locale': 'fr_FR',
     'og:site_name': "Parodonto'Lagny — Cabinet de Parodontologie",
-    'twitter:card': 'summary',
+    'og:image': ogImageUrl,
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:alt': "Cabinet Parodonto'Lagny — Dr. Rebecca Cohen, parodontologue à Lagny-sur-Marne",
+    'twitter:card': 'summary_large_image',
     'twitter:title': title,
     'twitter:description': description,
+    'twitter:image': ogImageUrl,
   };
 
   Object.entries(tags).forEach(([property, content]) => {

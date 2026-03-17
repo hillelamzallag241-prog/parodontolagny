@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infos Pratiques | Parodonto'Lagny</title>
   <meta name="description" content="Accès, horaires et informations pratiques du cabinet Parodonto'Lagny. 46 Rue du Chemin de Fer, Lagny-sur-Marne. RER, bus et parking.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -91,7 +93,18 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO } from '/src/js/seo.js';
     initLayout('cabinet');
+    initSEO({
+      path: '/infos-pratiques.html',
+      title: "Infos Pratiques | Accès et Horaires | Cabinet Parodonto'Lagny",
+      description: "Accès, horaires et informations pratiques du cabinet Parodonto'Lagny. 46 Rue du Chemin de Fer, 77400 Lagny-sur-Marne. RER Lagny-Thorigny, bus, parking.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Le Cabinet', url: '/cabinet.html' },
+        { name: 'Infos Pratiques', url: '/infos-pratiques.html' }
+      ]
+    });
   </script>
 </body>
 </html>

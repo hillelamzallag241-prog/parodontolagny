@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Facteurs de Risque | Parodonto'Lagny</title>
   <meta name="description" content="Découvrez les facteurs de risque des maladies parodontales : tabac, diabète, stress, génétique. Identifiez vos risques avec le Dr. Cohen à Lagny-sur-Marne.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -82,7 +84,22 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO, injectMedicalPageSchema } from '/src/js/seo.js';
     initLayout('maladies');
+    initSEO({
+      path: '/facteurs-risque.html',
+      title: "Facteurs de Risque Parodontaux | Tabac, Diabète, Stress | Parodonto'Lagny",
+      description: "Découvrez les facteurs de risque des maladies parodontales : tabac, diabète, stress, génétique. Identifiez vos risques avec le Dr. Cohen à Lagny-sur-Marne.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Maladies Parodontales', url: '/maladies-parodontales.html' },
+        { name: 'Facteurs de risque', url: '/facteurs-risque.html' }
+      ]
+    });
+    injectMedicalPageSchema(
+      'Facteurs de risque des maladies parodontales',
+      'Les principaux facteurs de risque de la parodontite : tabagisme, diabète, prédisposition génétique, stress, médicaments, hygiène insuffisante.'
+    );
   </script>
 </body>
 </html>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Le Cabinet | Parodonto'Lagny</title>
   <meta name="description" content="Découvrez le cabinet Parodonto'Lagny, dédié à la parodontologie à Lagny-sur-Marne. Notre philosophie : expertise, bienveillance et soins personnalisés.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -94,7 +96,17 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO } from '/src/js/seo.js';
     initLayout('cabinet');
+    initSEO({
+      path: '/cabinet.html',
+      title: "Le Cabinet | Parodonto'Lagny | Parodontologie à Lagny-sur-Marne",
+      description: "Découvrez le cabinet Parodonto'Lagny, dédié à la parodontologie à Lagny-sur-Marne. Notre philosophie : expertise, bienveillance et soins personnalisés par le Dr. Rebecca Cohen.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Le Cabinet', url: '/cabinet.html' }
+      ]
+    });
   </script>
 </body>
 </html>

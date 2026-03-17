@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conséquences des Maladies Parodontales | Parodonto'Lagny</title>
   <meta name="description" content="Impact des maladies parodontales sur la santé générale : risque cardiovasculaire, diabète, grossesse. Dr. Cohen, Lagny-sur-Marne.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -82,7 +84,22 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO, injectMedicalPageSchema } from '/src/js/seo.js';
     initLayout('maladies');
+    initSEO({
+      path: '/consequences.html',
+      title: "Conséquences des Maladies Parodontales | Santé Générale | Parodonto'Lagny",
+      description: "Impact des maladies parodontales sur la santé générale : risque cardiovasculaire, diabète, grossesse, infections respiratoires. Dr. Cohen, Lagny-sur-Marne.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Maladies Parodontales', url: '/maladies-parodontales.html' },
+        { name: 'Conséquences', url: '/consequences.html' }
+      ]
+    });
+    injectMedicalPageSchema(
+      'Conséquences des maladies parodontales sur la santé',
+      'Liens entre parodontite et maladies cardiovasculaires, diabète, complications de grossesse, infections respiratoires et déclin cognitif.'
+    );
   </script>
 </body>
 </html>

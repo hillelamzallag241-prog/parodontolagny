@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Déroulement des Soins | Parodonto'Lagny</title>
   <meta name="description" content="Comment se déroulent les soins parodontaux au cabinet Parodonto'Lagny ? Découvrez le parcours patient étape par étape. Dr. Cohen, Lagny-sur-Marne.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -89,7 +91,22 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO, injectMedicalPageSchema } from '/src/js/seo.js';
     initLayout('traitements');
+    initSEO({
+      path: '/deroulement-soins.html',
+      title: "Déroulement des Soins Parodontaux | Parcours Patient | Parodonto'Lagny",
+      description: "Comment se déroulent les soins parodontaux ? Du bilan initial à la maintenance : découvrez le parcours patient étape par étape au cabinet Parodonto'Lagny.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Traitements', url: '/traitements.html' },
+        { name: 'Déroulement des soins', url: '/deroulement-soins.html' }
+      ]
+    });
+    injectMedicalPageSchema(
+      'Déroulement des soins parodontaux',
+      'Parcours patient en parodontologie : consultation initiale, enseignement hygiène, traitement actif, réévaluation et maintenance.'
+    );
   </script>
 </body>
 </html>

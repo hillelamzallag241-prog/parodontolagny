@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suivi Parodontal | Parodonto'Lagny</title>
   <meta name="description" content="L'importance du suivi parodontal régulier pour maintenir vos résultats. Thérapeutique de soutien au cabinet Parodonto'Lagny, Lagny-sur-Marne.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -86,7 +88,22 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO, injectMedicalPageSchema } from '/src/js/seo.js';
     initLayout('traitements');
+    initSEO({
+      path: '/suivi.html',
+      title: "Suivi Parodontal | Maintenance et Contrôle | Parodonto'Lagny",
+      description: "L'importance du suivi parodontal régulier : maintenance, contrôle, détartrage. Protégez vos résultats dans la durée au cabinet Parodonto'Lagny.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Traitements', url: '/traitements.html' },
+        { name: 'Suivi parodontal', url: '/suivi.html' }
+      ]
+    });
+    injectMedicalPageSchema(
+      'Suivi et maintenance parodontale',
+      'Programme de maintenance parodontale : évaluation hygiène, sondage de contrôle, détartrage ciblé, adaptation du suivi.'
+    );
   </script>
 </body>
 </html>

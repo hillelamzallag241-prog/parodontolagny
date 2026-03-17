@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Symptômes Parodontaux | Parodonto'Lagny</title>
   <meta name="description" content="Saignements, gencives gonflées, mauvaise haleine... Reconnaissez les signes d'alerte d'une maladie parodontale. Cabinet Parodonto'Lagny, Lagny-sur-Marne.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -90,7 +92,22 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO, injectMedicalPageSchema } from '/src/js/seo.js';
     initLayout('maladies');
+    initSEO({
+      path: '/symptomes.html',
+      title: "Symptômes Parodontaux | Signes d'Alerte | Parodonto'Lagny",
+      description: "Saignements, gencives gonflées, mauvaise haleine... Reconnaissez les signes d'alerte d'une maladie parodontale. Cabinet Parodonto'Lagny, Lagny-sur-Marne.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Maladies Parodontales', url: '/maladies-parodontales.html' },
+        { name: 'Symptômes', url: '/symptomes.html' }
+      ]
+    });
+    injectMedicalPageSchema(
+      'Symptômes des maladies parodontales',
+      'Les signes d\'alerte de la parodontite : saignements, gencives rouges, mauvaise haleine, rétraction gingivale, mobilité dentaire.'
+    );
   </script>
 </body>
 </html>

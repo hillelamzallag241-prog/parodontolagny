@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tarifs | Parodonto'Lagny</title>
   <meta name="description" content="Consultez les tarifs des soins parodontaux au cabinet Parodonto'Lagny. Transparence et accessibilité pour tous nos patients.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -115,7 +117,18 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO } from '/src/js/seo.js';
     initLayout('cabinet');
+    initSEO({
+      path: '/tarifs.html',
+      title: "Tarifs Parodontologie | Cabinet Parodonto'Lagny | Lagny-sur-Marne",
+      description: "Consultez les tarifs des soins parodontaux au cabinet Parodonto'Lagny. Transparence et accessibilité. Devis détaillé remis avant tout traitement.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Le Cabinet', url: '/cabinet.html' },
+        { name: 'Tarifs', url: '/tarifs.html' }
+      ]
+    });
   </script>
 </body>
 </html>

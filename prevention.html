@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prévention Parodontale | Parodonto'Lagny</title>
   <meta name="description" content="Conseils de prévention pour protéger vos gencives au quotidien. Hygiène bucco-dentaire, brossage, alimentation. Dr. Cohen, Lagny-sur-Marne.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#1a5c5a">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -81,7 +83,22 @@
 
   <script type="module">
     import { initLayout } from '/src/js/layout.js';
+    import { initSEO, injectMedicalPageSchema } from '/src/js/seo.js';
     initLayout('traitements');
+    initSEO({
+      path: '/prevention.html',
+      title: "Prévention Parodontale | Hygiène Bucco-Dentaire | Parodonto'Lagny",
+      description: "Conseils de prévention pour protéger vos gencives : brossage, nettoyage interdentaire, alimentation, arrêt du tabac. Dr. Cohen, Lagny-sur-Marne.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Traitements', url: '/traitements.html' },
+        { name: 'Prévention', url: '/prevention.html' }
+      ]
+    });
+    injectMedicalPageSchema(
+      'Prévention des maladies parodontales',
+      'Les gestes essentiels pour prévenir les maladies parodontales : brossage adapté, nettoyage interdentaire, alimentation, arrêt du tabac.'
+    );
   </script>
 </body>
 </html>
