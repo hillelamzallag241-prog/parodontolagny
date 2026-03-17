@@ -215,13 +215,28 @@ function initMobileMenu() {
     document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Close on sub-link click (dropdown items & standalone links)
-  nav.querySelectorAll('.dropdown a, a.nav-link:not(.nav-link--parent)').forEach(link => {
-    link.addEventListener('click', () => {
-      toggle.classList.remove('active');
-      nav.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+  // Mark parent links FIRST (before attaching close handlers)
+  nav.querySelectorAll('.nav-item').forEach(item => {
+    const link = item.querySelector('.nav-link');
+    const dropdown = item.querySelector('.dropdown');
+    if (link && dropdown) {
+      link.classList.add('nav-link--parent');
+    }
+  });
+
+  // Close menu helper
+  function closeMenu() {
+    toggle.classList.remove('active');
+    nav.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on sub-link click (dropdown items & standalone links only)
+  nav.querySelectorAll('.dropdown a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+  nav.querySelectorAll('a.nav-link:not(.nav-link--parent)').forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
   // Mobile dropdown accordion toggle
@@ -230,13 +245,11 @@ function initMobileMenu() {
     const dropdown = item.querySelector('.dropdown');
     if (!link || !dropdown) return;
 
-    // Mark parent links
-    link.classList.add('nav-link--parent');
-
     link.addEventListener('click', (e) => {
       // Only act as accordion on mobile
       if (window.innerWidth > 768) return;
       e.preventDefault();
+      e.stopPropagation();
 
       const isOpen = item.classList.contains('open');
 

@@ -1227,12 +1227,18 @@ p { margin-bottom: var(--space-md); }
     transform: none;
     box-shadow: none;
     border: none;
-    border-left: 3px solid var(--color-primary-subtle);
+    border-left: 3px solid transparent;
     margin-left: var(--space-md);
     padding-left: var(--space-md);
+    padding-top: 0;
+    padding-bottom: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--transition-base);
+    transition: max-height var(--transition-base), border-color var(--transition-base);
+  }
+
+  .nav-item.open > .dropdown {
+    border-left-color: var(--color-primary-subtle);
   }
 
   .dropdown a {
