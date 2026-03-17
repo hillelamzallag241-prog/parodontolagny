@@ -1265,6 +1265,52 @@ p { margin-bottom: var(--space-md); }
   .container {
     padding: 0 var(--space-md);
   }
+
+  .page-hero {
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-2xl);
+  }
+
+  .page-hero p {
+    font-size: 1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .btn--lg {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+
+  .quiz-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .quiz-step-indicator {
+    order: -1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: var(--space-sm);
+  }
+
+  .info-card {
+    padding: var(--space-lg);
+  }
+
+  .content-image {
+    aspect-ratio: 16/10;
+  }
+
+  .cta-banner {
+    padding: var(--space-3xl) 0;
+  }
+
+  .cta-banner p {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1284,6 +1330,32 @@ p { margin-bottom: var(--space-md); }
 
   .quiz-container {
     padding: var(--space-lg);
+  }
+
+  .btn--lg {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .page-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .quiz-option {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.88rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .content-image {
+    aspect-ratio: 3/2;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.4rem;
   }
 }
 

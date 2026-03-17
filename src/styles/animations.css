@@ -395,3 +395,53 @@
   color: var(--color-primary);
   font-size: 1.2rem;
 }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .stats-row {
+    flex-direction: column;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .stat-divider {
+    width: 60px;
+    height: 1px;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  .trust-items {
+    gap: var(--space-lg);
+  }
+
+  .trust-item {
+    font-size: 0.82rem;
+  }
+
+  .glass-card {
+    padding: var(--space-lg);
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .trust-items {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+  }
+}
