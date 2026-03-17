@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Cabinet | Parodonto'Lagny</title>
+  <meta name="description" content="Découvrez le cabinet Parodonto'Lagny, dédié à la parodontologie à Lagny-sur-Marne. Notre philosophie : expertise, bienveillance et soins personnalisés.">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/animations.css">
+</head>
+<body class="page-transition">
+  <div id="header-placeholder"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Accueil</a> <span>›</span> <span class="current">Le Cabinet</span>
+      </div>
+      <h1>Notre Cabinet</h1>
+      <p>Un lieu de soins chaleureux, entièrement dédié à la santé de vos gencives.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="content-block fade-in">
+        <div class="content-text">
+          <span class="section-label">Notre philosophie</span>
+          <h2>Un cabinet né d'une passion pour la parodontologie</h2>
+          <p>Parodonto'Lagny est né d'un constat simple : trop de patients souffrent en silence de maladies parodontales sans savoir qu'il existe des solutions efficaces et accessibles. Les gencives qui saignent, les dents qui bougent, la mauvaise haleine qui persiste... autant de signaux que beaucoup considèrent comme « normaux » alors qu'ils méritent une prise en charge spécialisée.</p>
+          <p>Notre vocation est de changer cela. Nous vous accueillons dans un cadre rassurant, nous prenons le temps de comprendre votre histoire, votre quotidien et vos préoccupations, et nous vous proposons un véritable parcours de soins, pas un simple acte isolé.</p>
+          <p>Notre approche s'appuie sur trois engagements qui guident chacune de nos consultations :</p>
+          <ul>
+            <li>Un bilan complet et rigoureux pour établir un diagnostic précis, en prenant le temps qu'il faut</li>
+            <li>Un programme de soins personnalisé, construit avec vous et adapté à votre rythme de vie</li>
+            <li>Un suivi dans la durée, parce qu'un bon traitement ne s'arrête pas à la dernière séance</li>
+          </ul>
+        </div>
+        <div class="content-image float-slow">
+            <img src="/src/assets/photos/accueil.jpg" alt="Réception du cabinet Parodonto'Lagny" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bg">
+    <div class="container">
+      <div class="content-block reverse fade-in">
+        <div class="content-text">
+          <span class="section-label">Notre engagement</span>
+          <h2>L'écoute et la collaboration au coeur de notre pratique</h2>
+          <p>Nous savons que consulter pour un problème de gencives peut être source d'inquiétude. Beaucoup de patients nous confient qu'ils repoussent leur rendez-vous depuis des mois, parfois des années, par appréhension ou par crainte du jugement. Chez Parodonto'Lagny, nous faisons les choses différemment.</p>
+          <p>Nous accordons une place centrale à l'échange. Chaque consultation commence par un temps de discussion : nous vous écoutons, nous répondons à toutes vos questions, et nous vous expliquons clairement ce que nous observons. Pas de termes techniques incompréhensibles, pas de décisions prises dans votre dos.</p>
+          <p>Vous n'êtes pas spectateur de votre traitement, vous en êtes acteur. Nous vous donnons les clés pour comprendre votre pathologie et participer activement à votre guérison. Car un patient impliqué est un patient qui obtient de meilleurs résultats.</p>
+          <ul>
+            <li>Un temps d'échange dédié à chaque consultation, sans se presser</li>
+            <li>Des explications claires, sans jargon, avec supports visuels (photos, radiographies)</li>
+            <li>Une transparence totale sur les soins proposés, les alternatives et les tarifs</li>
+          </ul>
+        </div>
+        <div class="content-image float-delay">
+            <img src="/src/assets/photos/couloir.jpeg" alt="Couloir du cabinet Parodonto'Lagny" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container text-center">
+      <span class="section-label">Nos valeurs</span>
+      <h2 class="section-title">Les valeurs qui nous animent</h2>
+      <div class="grid grid--3 stagger-in" style="margin-top: var(--space-2xl);">
+        <div class="card card-animated">
+          <div class="card-icon">🎯</div>
+          <h3>Rigueur</h3>
+          <p>Un diagnostic approfondi, un bilan parodontal complet et des soins ciblés. Nous ne laissons rien au hasard pour vous offrir des résultats concrets et mesurables que vous pouvez constater vous-même.</p>
+        </div>
+        <div class="card card-animated">
+          <div class="card-icon">💚</div>
+          <h3>Humanité</h3>
+          <p>Un accueil chaleureux, une oreille attentive et un regard bienveillant. Ici, on prend soin de vous, sans jugement. Nous comprenons que chaque patient arrive avec son histoire et ses appréhensions, et nous en tenons compte.</p>
+        </div>
+        <div class="card card-animated">
+          <div class="card-icon">📚</div>
+          <h3>Excellence</h3>
+          <p>La parodontologie évolue, et nous avec. Formation continue, congrès, veille scientifique : nous mettons tout en oeuvre pour vous faire bénéficier des techniques les plus récentes et les plus fiables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="cta-placeholder" data-type="diagnostic"></div>
+  <div id="footer-placeholder"></div>
+
+  <script type="module">
+    import { initLayout } from '/src/js/layout.js';
+    initLayout('cabinet');
+  </script>
+</body>
+</html>

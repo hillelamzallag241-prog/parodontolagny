@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.parodontolagny.fr/sitemap.xml
+
+# Parodonto'Lagny - Cabinet de Parodontologie
+# Dr. Rebecca Cohen - Lagny-sur-Marne

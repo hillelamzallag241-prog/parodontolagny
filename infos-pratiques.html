@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infos Pratiques | Parodonto'Lagny</title>
+  <meta name="description" content="Accès, horaires et informations pratiques du cabinet Parodonto'Lagny. 46 Rue du Chemin de Fer, Lagny-sur-Marne. RER, bus et parking.">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/animations.css">
+</head>
+<body class="page-transition">
+  <div id="header-placeholder"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Accueil</a> <span>›</span> <a href="/cabinet.html">Le Cabinet</a> <span>›</span> <span class="current">Infos Pratiques</span>
+      </div>
+      <h1>Infos Pratiques</h1>
+      <p>Toutes les informations pour préparer votre visite.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3 stagger-in">
+        <div class="info-card card-animated">
+          <div class="icon">📍</div>
+          <h3>Adresse</h3>
+          <p>46 Rue du Chemin de Fer<br>77400 Lagny-sur-Marne</p>
+          <p style="margin-top: var(--space-sm); font-size: 0.85rem; color: var(--color-text-muted);">Rez-de-chaussée, entrée accessible</p>
+        </div>
+        <div class="info-card card-animated">
+          <div class="icon">🕐</div>
+          <h3>Horaires</h3>
+          <p>Sur rendez-vous uniquement</p>
+          <p style="margin-top: var(--space-sm);">
+            <a href="https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne" target="_blank" rel="noopener" class="btn btn--primary" style="margin-top: var(--space-sm);">Voir les disponibilités</a>
+          </p>
+        </div>
+        <div class="info-card card-animated">
+          <div class="icon">♿</div>
+          <h3>Accessibilité</h3>
+          <p>Le cabinet est situé au rez-de-chaussée avec une entrée accessible aux personnes à mobilité réduite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="section section--bg">
+    <div class="container">
+      <span class="section-label">Comment venir</span>
+      <h2 class="section-title">Accès au cabinet</h2>
+      <div class="grid grid--2 fade-in" style="margin-top: var(--space-2xl);">
+        <div>
+          <h3 style="margin-bottom: var(--space-lg);">🚆 Transports en commun</h3>
+          <div style="margin-bottom: var(--space-xl);">
+            <h4 style="color: var(--color-primary); margin-bottom: var(--space-sm);">RER / Transilien</h4>
+            <p style="color: var(--color-text-light);">Gare de Lagny-Thorigny, Ligne P<br>Environ 5 minutes à pied du cabinet</p>
+          </div>
+          <div style="margin-bottom: var(--space-xl);">
+            <h4 style="color: var(--color-primary); margin-bottom: var(--space-sm);">Bus</h4>
+            <p style="color: var(--color-text-light);">Arrêt Delambre, Ligne 23<br>Arrêt Verdun, Lignes 29, 25, 42, 26, 21, 23, 02</p>
+          </div>
+
+          <h3 style="margin-bottom: var(--space-lg); margin-top: var(--space-2xl);">🚗 En voiture</h3>
+          <div>
+            <h4 style="color: var(--color-primary); margin-bottom: var(--space-sm);">Parking public</h4>
+            <p style="color: var(--color-text-light);">3 bis rue Delambre, 77400 Lagny-sur-Marne<br>À proximité immédiate du cabinet</p>
+          </div>
+        </div>
+        <div>
+          <div style="width: 100%; height: 450px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2627.5!2d2.7117!3d48.8747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s46+Rue+du+Chemin+de+Fer+77400+Lagny-sur-Marne!5e0!3m2!1sfr!2sfr!4v1"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="cta-placeholder" data-type="rdv"></div>
+  <div id="footer-placeholder"></div>
+
+  <script type="module">
+    import { initLayout } from '/src/js/layout.js';
+    initLayout('cabinet');
+  </script>
+</body>
+</html>

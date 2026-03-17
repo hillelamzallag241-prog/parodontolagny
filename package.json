@@ -1,0 +1,13 @@
+{
+  "name": "parodontolagny",
+  "version": "1.0.0",
+  "description": "Site web du cabinet Parodonto'Lagny - Dr. Rebecca Cohen",
+  "scripts": {
+    "dev": "vite --port 4010",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5"
+  }
+}

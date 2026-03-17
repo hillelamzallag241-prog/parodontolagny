@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Parodonto'Lagny</title>
+  <meta name="description" content="Contactez le cabinet Parodonto'Lagny. Dr. Rebecca Cohen, 46 Rue du Chemin de Fer, Lagny-sur-Marne. Prenez rendez-vous sur Doctolib.">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/animations.css">
+</head>
+<body class="page-transition">
+  <div id="header-placeholder"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Accueil</a> <span>›</span> <span class="current">Contact</span>
+      </div>
+      <h1>Nous Contacter</h1>
+      <p>Pour toute question ou prise de rendez-vous, n'hésitez pas à nous écrire.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid fade-in">
+        <div>
+          <span class="section-label">Écrivez-nous</span>
+          <h2 style="margin-bottom: var(--space-xl);">Formulaire de contact</h2>
+          <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="name">Nom complet *</label>
+              <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="votre@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="06 XX XX XX XX">
+            </div>
+            <div class="form-group">
+              <label for="subject">Objet *</label>
+              <select id="subject" name="subject" required>
+                <option value="">— Sélectionnez —</option>
+                <option value="rdv">Prise de rendez-vous</option>
+                <option value="info">Demande d'information</option>
+                <option value="correspondant">Espace correspondant (confrère)</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Décrivez votre demande..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" id="submit-btn">Envoyer le message →</button>
+            <div id="form-status" style="margin-top: var(--space-md); display: none;"></div>
+          </form>
+        </div>
+
+        <div>
+          <span class="section-label">Coordonnées</span>
+          <h2 style="margin-bottom: var(--space-xl);">Retrouvez-nous</h2>
+
+          <div class="card" style="margin-bottom: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-md);">📍 Cabinet Parodonto'Lagny</h3>
+            <p style="color: var(--color-text-light);">
+              46 Rue du Chemin de Fer<br>
+              77400 Lagny-sur-Marne
+            </p>
+            <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: var(--space-sm);">
+              Rez-de-chaussée, entrée accessible PMR
+            </p>
+          </div>
+
+          <div class="card" style="margin-bottom: var(--space-xl);">
+            <h3 style="margin-bottom: var(--space-md);">🚆 Accès</h3>
+            <p style="color: var(--color-text-light); font-size: 0.95rem;">
+              <strong>RER :</strong> Gare Lagny-Thorigny (Ligne P)<br>
+              <strong>Bus :</strong> Arrêt Delambre (ligne 23) / Verdun (lignes 29, 25, 42)<br>
+              <strong>Parking :</strong> 3 bis rue Delambre
+            </p>
+          </div>
+
+          <a href="https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne" target="_blank" rel="noopener" class="btn btn--accent btn--lg" style="width: 100%; justify-content: center;">
+            📅 Prendre rendez-vous sur Doctolib
+          </a>
+
+          <div style="margin-top: var(--space-xl); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2627.5!2d2.7117!3d48.8747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s46+Rue+du+Chemin+de+Fer+77400+Lagny-sur-Marne!5e0!3m2!1sfr!2sfr!4v1"
+              width="100%" height="250"
+              style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script type="module">
+    import { initLayout } from '/src/js/layout.js';
+    import { initSEO } from '/src/js/seo.js';
+    initLayout('contact');
+    initSEO({
+      path: '/contact.html',
+      title: "Contact | Cabinet Parodonto'Lagny | Dr. Rebecca Cohen, Lagny-sur-Marne",
+      description: "Contactez le cabinet Parodonto'Lagny. Dr. Rebecca Cohen, 46 Rue du Chemin de Fer, 77400 Lagny-sur-Marne. Prenez rendez-vous sur Doctolib ou via notre formulaire.",
+      breadcrumbs: [
+        { name: 'Accueil', url: '/' },
+        { name: 'Contact', url: '/contact.html' }
+      ]
+    });
+  </script>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById('form-status');
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours...';
+      
+      setTimeout(() => {
+        status.style.display = 'block';
+        status.innerHTML = '<div class="glass-card" style="background: #dcfce7; border-color: #86efac;"><p style="color: #166534; margin: 0;"><strong>✅ Message envoyé avec succès !</strong><br>Nous vous répondrons dans les meilleurs délais.</p></div>';
+        btn.textContent = 'Message envoyé ✓';
+        document.getElementById('contact-form').reset();
+        setTimeout(() => { btn.disabled = false; btn.textContent = 'Envoyer le message →'; }, 3000);
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarifs | Parodonto'Lagny</title>
+  <meta name="description" content="Consultez les tarifs des soins parodontaux au cabinet Parodonto'Lagny. Transparence et accessibilité pour tous nos patients.">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/animations.css">
+</head>
+<body class="page-transition">
+  <div id="header-placeholder"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Accueil</a> <span>›</span> <a href="/cabinet.html">Le Cabinet</a> <span>›</span> <span class="current">Tarifs</span>
+      </div>
+      <h1>Nos Tarifs</h1>
+      <p>Transparence et clarté pour vous accompagner sereinement.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="fade-in" style="max-width: 900px; margin: 0 auto;">
+        <span class="section-label">Grille tarifaire</span>
+        <h2 class="section-title">Soins parodontaux</h2>
+        <p style="color: var(--color-text-light); margin-bottom: var(--space-2xl);">
+          Nos tarifs sont communiqués en toute transparence. Un devis détaillé et personnalisé vous sera remis avant tout traitement. Les tarifs ci-dessous sont donnés à titre indicatif.
+        </p>
+
+        <table class="tarifs-table">
+          <thead>
+            <tr>
+              <th>Soin / Acte</th>
+              <th>Tarif indicatif</th>
+              <th>Remboursement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bilan parodontal complet</td>
+              <td>80 à 150 €</td>
+              <td>Partiellement pris en charge</td>
+            </tr>
+            <tr>
+              <td>Détartrage et surfaçage radiculaire (par quadrant)</td>
+              <td>150 à 300 €</td>
+              <td>Selon la nomenclature</td>
+            </tr>
+            <tr>
+              <td>Traitement parodontal non chirurgical</td>
+              <td>600 à 1 200 €</td>
+              <td>Hors nomenclature</td>
+            </tr>
+            <tr>
+              <td>Chirurgie parodontale (par secteur)</td>
+              <td>400 à 800 €</td>
+              <td>Hors nomenclature</td>
+            </tr>
+            <tr>
+              <td>Greffe gingivale</td>
+              <td>500 à 1 000 €</td>
+              <td>Hors nomenclature</td>
+            </tr>
+            <tr>
+              <td>Régénération osseuse guidée</td>
+              <td>600 à 1 200 €</td>
+              <td>Hors nomenclature</td>
+            </tr>
+            <tr>
+              <td>Maintenance parodontale (séance)</td>
+              <td>80 à 150 €</td>
+              <td>Partiellement pris en charge</td>
+            </tr>
+            <tr>
+              <td>Consultation de contrôle</td>
+              <td>25 à 50 €</td>
+              <td>Prise en charge Sécu</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tarifs-note">* Les tarifs sont donnés à titre indicatif et peuvent varier selon la complexité du cas. Un devis détaillé est systématiquement remis au patient avant tout traitement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bg">
+    <div class="container">
+      <div class="grid grid--3 stagger-in">
+        <div class="card card-animated text-center">
+          <div class="card-icon" style="margin: 0 auto var(--space-lg);">💳</div>
+          <h3>Facilités de paiement</h3>
+          <p>Possibilité de paiement échelonné pour les traitements importants. Parlez-en avec notre équipe.</p>
+        </div>
+        <div class="card card-animated text-center">
+          <div class="card-icon" style="margin: 0 auto var(--space-lg);">📋</div>
+          <h3>Devis préalable</h3>
+          <p>Un devis clair et détaillé vous est remis avant tout traitement pour une totale transparence.</p>
+        </div>
+        <div class="card card-animated text-center">
+          <div class="card-icon" style="margin: 0 auto var(--space-lg);">🏦</div>
+          <h3>Prise en charge mutuelle</h3>
+          <p>Certains actes sont pris en charge par votre complémentaire santé. Renseignez-vous auprès de votre mutuelle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="cta-placeholder" data-type="rdv"></div>
+  <div id="footer-placeholder"></div>
+
+  <script type="module">
+    import { initLayout } from '/src/js/layout.js';
+    initLayout('cabinet');
+  </script>
+</body>
+</html>
