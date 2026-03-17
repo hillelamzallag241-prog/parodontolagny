@@ -55,8 +55,48 @@ export function injectOrganizationSchema() {
         "name": "Bussy-Saint-Georges"
       },
       {
+        "@type": "City",
+        "name": "Chelles"
+      },
+      {
+        "@type": "City",
+        "name": "Torcy"
+      },
+      {
+        "@type": "City",
+        "name": "Noisiel"
+      },
+      {
+        "@type": "City",
+        "name": "Champs-sur-Marne"
+      },
+      {
+        "@type": "City",
+        "name": "Montevrain"
+      },
+      {
+        "@type": "City",
+        "name": "Gouvernes"
+      },
+      {
+        "@type": "City",
+        "name": "Dampmart"
+      },
+      {
+        "@type": "City",
+        "name": "Chanteloup-en-Brie"
+      },
+      {
+        "@type": "City",
+        "name": "Collégien"
+      },
+      {
         "@type": "AdministrativeArea",
         "name": "Seine-et-Marne"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Marne-la-Vallée"
       }
     ],
     "sameAs": [
@@ -64,10 +104,30 @@ export function injectOrganizationSchema() {
     ],
     "hasMap": "https://www.google.com/maps?q=46+Rue+du+Chemin+de+Fer+77400+Lagny-sur-Marne",
     "isAccessibleForFree": false,
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    ],
     "medicalSpecialty": {
       "@type": "MedicalSpecialty",
       "name": "Parodontologie"
     },
+    "knowsAbout": [
+      "Parodontologie",
+      "Gingivite",
+      "Parodontite",
+      "Surfaçage radiculaire",
+      "Greffe gingivale",
+      "Chirurgie parodontale",
+      "Détartrage",
+      "Maintenance parodontale",
+      "Récession gingivale",
+      "Implantologie"
+    ],
     "availableService": [
       {
         "@type": "MedicalProcedure",
