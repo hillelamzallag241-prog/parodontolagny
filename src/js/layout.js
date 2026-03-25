@@ -5,7 +5,7 @@
 import { icon } from './icons.js';
 import { replaceEmojis } from './emoji-replace.js';
 
-const DOCTOLIB_URL = 'https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne';
+const DOCTOLIB_URL = 'https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne/booking/motives?specialityId=1&telehealth=false&placeId=practice-268019&motiveCategoryIds%5B%5D=222400&profile_skipped=false&source=profile';
 
 // --- Header HTML ---
 function getHeader(activePage = '') {
@@ -55,8 +55,8 @@ function getHeader(activePage = '') {
           </div>
         </div>
 
-        <a href="/autodiagnostic.html" class="nav-link ${activePage === 'autodiagnostic' ? 'active' : ''}">
-          Autodiagnostic
+        <a href="/autodiagnostic.html" class="header-cta header-cta--diagnostic ${activePage === 'autodiagnostic' ? 'active' : ''}">
+          ${icon('stethoscope', 16)} Autodiagnostic
         </a>
 
         <a href="/contact.html" class="nav-link ${activePage === 'contact' ? 'active' : ''}">
@@ -94,7 +94,7 @@ function getFooter() {
       <div class="footer-grid">
         <div class="footer-brand">
           <span class="logo-text">Parodonto<span>'Lagny</span></span>
-          <p>Cabinet de parodontologie dédié à la santé de vos gencives et à la préservation de votre sourire. Dr. Rebecca Cohen vous accueille à Lagny-sur-Marne.</p>
+          <p>Cabinet dentaire orienté parodontologie, au service de la santé de vos gencives et de la préservation de votre sourire. Dr. Rebecca Cohen vous accueille à Lagny-sur-Marne.</p>
         </div>
 
         <div class="footer-col">
@@ -335,13 +335,14 @@ export function initCounters() {
         const el = entry.target;
         const target = parseInt(el.getAttribute('data-count'));
         const suffix = el.getAttribute('data-suffix') || '';
+        const prefix = el.getAttribute('data-prefix') || '';
         const duration = 2000;
         const start = performance.now();
 
         function animate(now) {
           const progress = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.floor(eased * target) + suffix;
+          el.textContent = prefix + Math.floor(eased * target) + suffix;
           if (progress < 1) requestAnimationFrame(animate);
         }
         requestAnimationFrame(animate);

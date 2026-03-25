@@ -7,11 +7,11 @@
 
 /* --- CSS Variables --- */
 :root {
-  /* Primary palette — deep teal / medical green */
-  --color-primary: #1a5c5a;
-  --color-primary-dark: #0f3d3b;
-  --color-primary-light: #2a8a87;
-  --color-primary-subtle: #e8f4f3;
+  /* Primary palette — rose-taupe / gencive */
+  --color-primary: #9E7070;
+  --color-primary-dark: #7A5353;
+  --color-primary-light: #BF9494;
+  --color-primary-subtle: #F7EFEF;
 
   /* Accent — warm gold */
   --color-accent: #c9a84c;
@@ -322,13 +322,28 @@ p { margin-bottom: var(--space-md); }
   font-weight: 600;
   border-radius: var(--radius-lg);
   transition: all var(--transition-base);
-  box-shadow: 0 2px 10px rgba(26,92,90,0.3);
+  box-shadow: 0 2px 10px rgba(158,112,112,0.3);
 }
 
 .header-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(26,92,90,0.4);
+  box-shadow: 0 4px 15px rgba(158,112,112,0.4);
   color: var(--color-white) !important;
+}
+
+.header-cta--diagnostic {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  box-shadow: 0 2px 10px rgba(201,168,76,0.3);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.header-cta--diagnostic:hover {
+  box-shadow: 0 4px 15px rgba(201,168,76,0.5);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 2px 10px rgba(201,168,76,0.3); }
+  50% { box-shadow: 0 4px 20px rgba(201,168,76,0.6); }
 }
 
 /* Mobile menu toggle */
@@ -369,12 +384,12 @@ p { margin-bottom: var(--space-md); }
 .btn--primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: var(--color-white);
-  box-shadow: 0 4px 15px rgba(26,92,90,0.3);
+  box-shadow: 0 4px 15px rgba(158,112,112,0.3);
 }
 
 .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(26,92,90,0.4);
+  box-shadow: 0 6px 20px rgba(158,112,112,0.4);
   color: var(--color-white);
 }
 
@@ -1262,6 +1277,10 @@ p { margin-bottom: var(--space-md); }
     text-align: center;
     padding: 14px;
     border-top: none;
+  }
+
+  .header-cta + .header-cta {
+    margin-top: var(--space-sm);
   }
 
   .hero {

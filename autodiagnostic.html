@@ -6,7 +6,7 @@
   <title>Test Parodontal Gratuit en Ligne | Parodonto'Lagny</title>
   <meta name="description" content="Évaluez vos gencives en 2 minutes : test parodontal gratuit et anonyme. Saignements, déchaussement ? Cabinet Parodonto'Lagny, Lagny-sur-Marne (77).">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta name="theme-color" content="#1a5c5a">
+  <meta name="theme-color" content="#9E7070">
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/animations.css">
 </head>
@@ -295,16 +295,33 @@
         text = `Vos réponses suggèrent un risque élevé de maladie parodontale. Plusieurs signaux d'alerte sont présents. Il est fortement recommandé de consulter rapidement un parodontologue pour un diagnostic précis et une prise en charge adaptée. Plus tôt la maladie est traitée, meilleures sont les chances de préserver vos dents.`;
       }
       
+      const doctolibUrl = 'https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne/booking/motives?specialityId=1&telehealth=false&placeId=practice-268019&motiveCategoryIds%5B%5D=222400&profile_skipped=false&source=profile';
+      const showRdvBtn = className === 'moderate' || className === 'high';
+
       document.getElementById('result-content').innerHTML = `
         <div class="result-icon ${className}" style="animation: fadeIn 0.6s ease;">${icon}</div>
         <div class="result-level ${className}">${level}</div>
         <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--space-md);">Score : ${totalScore} / ${getMaxScore()}</p>
         <p class="result-text">${text}</p>
-        <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
-          <a href="https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne" target="_blank" rel="noopener" class="btn btn--accent btn--lg btn--pulse">📅 Prendre rendez-vous</a>
+        ${showRdvBtn ? `
+        <div style="background: var(--color-primary-subtle); border-radius: var(--radius-lg); padding: var(--space-xl); margin-bottom: var(--space-xl);">
+          <p style="font-weight: 600; color: var(--color-primary-dark); margin-bottom: var(--space-md); font-size: 1.05rem;">Nous vous recommandons de consulter</p>
+          <a href="${doctolibUrl}" target="_blank" rel="noopener" class="btn btn--accent btn--lg btn--pulse" style="width: 100%; justify-content: center;">📅 Prendre rendez-vous avec le Dr. Cohen</a>
+        </div>
+        ` : ''}
+        <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-xl);">
           <button class="btn btn--outline" onclick="resetQuiz()">🔄 Refaire le test</button>
         </div>
-        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: var(--space-2xl); font-style: italic;">
+        <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-xl);">
+          <p style="font-weight: 600; margin-bottom: var(--space-md); color: var(--color-text);">Partagez ce test avec vos proches</p>
+          <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
+            <a href="https://wa.me/?text=${encodeURIComponent('Faites le test parodontal gratuit en 2 minutes : https://www.parodontolagny.fr/autodiagnostic.html')}" target="_blank" rel="noopener" class="btn btn--outline" style="padding: 10px 20px; font-size: 0.85rem;">WhatsApp</a>
+            <button class="btn btn--outline" style="padding: 10px 20px; font-size: 0.85rem;" onclick="shareSMS()">SMS</button>
+            <button class="btn btn--outline" style="padding: 10px 20px; font-size: 0.85rem;" onclick="copyLink()">Copier le lien</button>
+          </div>
+          <p id="copy-confirm" style="font-size: 0.8rem; color: var(--color-risk-low); margin-top: var(--space-sm); display: none;">Lien copié !</p>
+        </div>
+        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: var(--space-xl); font-style: italic;">
           Ce questionnaire est un outil d'orientation et ne constitue pas un diagnostic médical. Seul un examen clinique par un professionnel qualifié peut établir un diagnostic fiable. Consultez le Dr. Rebecca Cohen pour un bilan parodontal personnalisé.
         </p>
       `;
@@ -312,6 +329,17 @@
 
     function getMaxScore() {
       return questions.reduce((sum, q) => sum + Math.max(...q.options.map(o => o.score)), 0);
+    }
+
+    function shareSMS() {
+      window.open('sms:?body=' + encodeURIComponent('Faites le test parodontal gratuit en 2 minutes : https://www.parodontolagny.fr/autodiagnostic.html'));
+    }
+
+    function copyLink() {
+      navigator.clipboard.writeText('https://www.parodontolagny.fr/autodiagnostic.html').then(() => {
+        const confirm = document.getElementById('copy-confirm');
+        if (confirm) { confirm.style.display = 'block'; setTimeout(() => confirm.style.display = 'none', 2000); }
+      });
     }
 
     function resetQuiz() {
