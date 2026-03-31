@@ -62,139 +62,38 @@
     </div>
   </section>
 
-  <!-- SCHÉMA PROGRESSION PARODONTALE — Défilement sticky -->
-  <section class="paro-scroll" id="schema-section">
-    <div class="paro-scroll-track" id="paro-scroll-track">
-      <div class="paro-scroll-sticky">
-        <div class="container">
-          <div class="text-center" style="margin-bottom: var(--space-lg);">
-            <span class="section-label">Comprendre la progression</span>
-            <h2 class="section-title">Les stades de la maladie parodontale</h2>
-          </div>
-
-          <div class="paro-scroll-content">
-            <!-- Image croppée sur une dent à la fois -->
-            <div class="paro-tooth-view">
-              <div class="paro-tooth-slider" id="paro-tooth-slider">
-                <img src="/src/assets/photos/progression-parodontale.png"
-                     alt="Progression de la maladie parodontale">
-              </div>
-            </div>
-
-            <!-- Descriptions (une visible à la fois) -->
-            <div class="paro-scroll-info" id="paro-scroll-info">
-              <div class="paro-info-panel active" data-stage="0">
-                <span class="paro-info-badge" style="--stage-color: #22c55e;">Stade 1</span>
-                <h4>Dent saine</h4>
-                <p>La gencive est rose pâle et ferme. Elle adhère parfaitement à la dent. L'os alvéolaire est intact et le sondage parodontal ne dépasse pas <strong>2-3 mm</strong>.</p>
-                <span class="paro-info-tag paro-tag-ok">Aucun traitement nécessaire</span>
-              </div>
-              <div class="paro-info-panel" data-stage="1">
-                <span class="paro-info-badge" style="--stage-color: #84cc16;">Stade 2</span>
-                <h4>Gingivite</h4>
-                <p>La gencive est rouge, gonflée et saigne au brossage. Le tartre s'accumule au collet. L'os n'est pas encore atteint : <strong>ce stade est réversible</strong> avec un détartrage et une bonne hygiène.</p>
-                <span class="paro-info-tag paro-tag-ok">Réversible</span>
-              </div>
-              <div class="paro-info-panel" data-stage="2">
-                <span class="paro-info-badge" style="--stage-color: #f59e0b;">Stade 3</span>
-                <h4>Parodontite débutante</h4>
-                <p>Le tartre migre sous la gencive. Des poches parodontales de <strong>4 à 5 mm</strong> se forment. La perte osseuse commence. Le sondage révèle 1 à 2 mm d'attache perdue.</p>
-                <span class="paro-info-tag paro-tag-warn">Traitement recommandé</span>
-              </div>
-              <div class="paro-info-panel" data-stage="3">
-                <span class="paro-info-badge" style="--stage-color: #ef4444;">Stade 4</span>
-                <h4>Parodontite avancée</h4>
-                <p>Les poches atteignent <strong>6 mm</strong>. La perte osseuse est significative. La gencive se rétracte, exposant les racines. Des sensibilités dentaires apparaissent.</p>
-                <span class="paro-info-tag paro-tag-bad">Traitement urgent</span>
-              </div>
-              <div class="paro-info-panel" data-stage="4">
-                <span class="paro-info-badge" style="--stage-color: #991b1b;">Stade 5</span>
-                <h4>Parodontite sévère</h4>
-                <p>Les poches dépassent <strong>7 mm</strong> avec un sondage à 9 mm. L'os est largement détruit. Les dents deviennent mobiles et risquent de tomber.</p>
-                <span class="paro-info-tag paro-tag-bad">Phase terminale</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Barre de progression avec dots -->
-          <div class="paro-scroll-progress">
-            <div class="paro-progress-bar">
-              <div class="paro-progress-fill" id="paro-progress-fill"></div>
-            </div>
-            <div class="paro-progress-dots" id="paro-progress-dots">
-              <button class="paro-dot active" data-stage="0"><span>1</span> Saine</button>
-              <button class="paro-dot" data-stage="1"><span>2</span> Gingivite</button>
-              <button class="paro-dot" data-stage="2"><span>3</span> Début</button>
-              <button class="paro-dot" data-stage="3"><span>4</span> Avancée</button>
-              <button class="paro-dot" data-stage="4"><span>5</span> Sévère</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Fallback mobile : carrousel interactif -->
-  <section class="section paro-mobile-fallback">
+  <!-- SCHÉMA PROGRESSION PARODONTALE -->
+  <section class="section">
     <div class="container">
-      <div class="text-center" style="margin-bottom: var(--space-lg);">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
         <span class="section-label">Comprendre la progression</span>
         <h2 class="section-title">Les stades de la maladie parodontale</h2>
       </div>
-
-      <!-- Image croppée mobile -->
-      <div class="paro-mobile-tooth-view">
-        <div class="paro-mobile-slider" id="paro-mobile-slider">
-          <img src="/src/assets/photos/progression-parodontale.png"
-               alt="Progression de la maladie parodontale">
+      <img src="/src/assets/photos/progression-parodontale.png"
+           alt="Les 5 stades de la maladie parodontale : de la dent saine à la parodontite sévère"
+           class="fade-in"
+           style="width: 100%; height: auto; border-radius: var(--radius-lg); margin-bottom: var(--space-2xl);">
+      <div class="paro-stages-grid stagger-in">
+        <div class="paro-stage-card" style="--stage-color: #22c55e;">
+          <h4>1. Dent saine</h4>
+          <p>Gencive rose pâle et ferme. Os alvéolaire intact. Sondage 2-3 mm.</p>
         </div>
-      </div>
-
-      <!-- Description du stade actif -->
-      <div class="paro-mobile-info" id="paro-mobile-info">
-        <div class="paro-mobile-panel active" data-stage="0">
-          <span class="paro-info-badge" style="--stage-color: #22c55e;">Stade 1</span>
-          <h4>Dent saine</h4>
-          <p>La gencive est rose pâle et ferme. L'os alvéolaire est intact. Sondage <strong>2-3 mm</strong>.</p>
-          <span class="paro-info-tag paro-tag-ok">Aucun traitement nécessaire</span>
+        <div class="paro-stage-card" style="--stage-color: #84cc16;">
+          <h4>2. Gingivite</h4>
+          <p>Gencive rouge, gonflée, saignements au brossage. <strong>Stade réversible</strong> avec détartrage.</p>
         </div>
-        <div class="paro-mobile-panel" data-stage="1">
-          <span class="paro-info-badge" style="--stage-color: #84cc16;">Stade 2</span>
-          <h4>Gingivite</h4>
-          <p>Gencive rouge, gonflée, saignements au brossage. <strong>Ce stade est réversible</strong> avec un détartrage.</p>
-          <span class="paro-info-tag paro-tag-ok">Réversible</span>
+        <div class="paro-stage-card" style="--stage-color: #f59e0b;">
+          <h4>3. Parodontite débutante</h4>
+          <p>Poches de 4-5 mm. Début de perte osseuse. Traitement recommandé.</p>
         </div>
-        <div class="paro-mobile-panel" data-stage="2">
-          <span class="paro-info-badge" style="--stage-color: #f59e0b;">Stade 3</span>
-          <h4>Parodontite débutante</h4>
-          <p>Poches parodontales de <strong>4 à 5 mm</strong>. Début de perte osseuse.</p>
-          <span class="paro-info-tag paro-tag-warn">Traitement recommandé</span>
+        <div class="paro-stage-card" style="--stage-color: #ef4444;">
+          <h4>4. Parodontite avancée</h4>
+          <p>Poches de 6 mm. Perte osseuse significative. Récession gingivale.</p>
         </div>
-        <div class="paro-mobile-panel" data-stage="3">
-          <span class="paro-info-badge" style="--stage-color: #ef4444;">Stade 4</span>
-          <h4>Parodontite avancée</h4>
-          <p>Poches de <strong>6 mm</strong>. Perte osseuse significative. Récession gingivale.</p>
-          <span class="paro-info-tag paro-tag-bad">Traitement urgent</span>
+        <div class="paro-stage-card" style="--stage-color: #991b1b;">
+          <h4>5. Parodontite sévère</h4>
+          <p>Poches > 7 mm. Dents mobiles. Risque de perte dentaire.</p>
         </div>
-        <div class="paro-mobile-panel" data-stage="4">
-          <span class="paro-info-badge" style="--stage-color: #991b1b;">Stade 5</span>
-          <h4>Parodontite sévère</h4>
-          <p>Poches > <strong>7 mm</strong>. Dents mobiles. Risque de perte dentaire.</p>
-          <span class="paro-info-tag paro-tag-bad">Phase terminale</span>
-        </div>
-      </div>
-
-      <!-- Navigation dots + flèches -->
-      <div class="paro-mobile-nav">
-        <button class="paro-mobile-arrow" id="paro-mobile-prev" aria-label="Précédent">‹</button>
-        <div class="paro-mobile-dots" id="paro-mobile-dots">
-          <button class="paro-mobile-dot active" data-stage="0"></button>
-          <button class="paro-mobile-dot" data-stage="1"></button>
-          <button class="paro-mobile-dot" data-stage="2"></button>
-          <button class="paro-mobile-dot" data-stage="3"></button>
-          <button class="paro-mobile-dot" data-stage="4"></button>
-        </div>
-        <button class="paro-mobile-arrow" id="paro-mobile-next" aria-label="Suivant">›</button>
       </div>
     </div>
   </section>
@@ -254,106 +153,6 @@
       'Guide complet sur les maladies parodontales, de la gingivite à la parodontite. Causes, symptômes, conséquences et traitements.'
     );
 
-    // Scroll-driven tooth progression
-    (function() {
-      const track = document.getElementById('paro-scroll-track');
-      if (!track) return;
-
-      const slider = document.getElementById('paro-tooth-slider');
-      const info = document.getElementById('paro-scroll-info');
-      const fill = document.getElementById('paro-progress-fill');
-      const dotsContainer = document.getElementById('paro-progress-dots');
-      const panels = info.querySelectorAll('.paro-info-panel');
-      const dots = dotsContainer.querySelectorAll('.paro-dot');
-
-      let currentStage = -1;
-
-      function setStage(index) {
-        if (index === currentStage) return;
-        currentStage = index;
-
-        // Crop image
-        slider.setAttribute('data-active', index);
-
-        // Switch description panel
-        panels.forEach((p, i) => p.classList.toggle('active', i === index));
-
-        // Update progress bar
-        fill.style.width = ((index + 1) * 20) + '%';
-
-        // Update dots
-        dots.forEach((d, i) => d.classList.toggle('active', i === index));
-      }
-
-      function onScroll() {
-        const rect = track.getBoundingClientRect();
-        const viewH = window.innerHeight;
-        const trackH = rect.height;
-
-        // Progress = how far we've scrolled through the track
-        const scrolled = -rect.top;
-        const scrollable = trackH - viewH;
-        const progress = Math.min(1, Math.max(0, scrolled / scrollable));
-
-        const index = Math.min(4, Math.floor(progress * 5));
-        setStage(index);
-      }
-
-      // Dot click navigation
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          const stage = parseInt(dot.dataset.stage);
-          const rect = track.getBoundingClientRect();
-          const trackH = rect.height;
-          const viewH = window.innerHeight;
-          const scrollable = trackH - viewH;
-          const targetScroll = (stage / 5) * scrollable;
-          const trackTop = window.scrollY + rect.top;
-          window.scrollTo({ top: trackTop + targetScroll, behavior: 'smooth' });
-        });
-      });
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
-
-    // Mobile carousel: swipe + arrows + dots
-    (function() {
-      const slider = document.getElementById('paro-mobile-slider');
-      if (!slider) return;
-
-      const info = document.getElementById('paro-mobile-info');
-      const panels = info.querySelectorAll('.paro-mobile-panel');
-      const dots = document.querySelectorAll('.paro-mobile-dot');
-      const prevBtn = document.getElementById('paro-mobile-prev');
-      const nextBtn = document.getElementById('paro-mobile-next');
-      let current = 0;
-
-      function goTo(idx) {
-        if (idx < 0 || idx > 4) return;
-        current = idx;
-        slider.setAttribute('data-active', idx);
-        panels.forEach((p, i) => p.classList.toggle('active', i === idx));
-        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-      }
-
-      prevBtn.addEventListener('click', () => goTo(current - 1));
-      nextBtn.addEventListener('click', () => goTo(current + 1));
-      dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.stage))));
-
-      // Touch swipe
-      let startX = 0;
-      const view = slider.parentElement;
-      view.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-      view.addEventListener('touchend', e => {
-        const diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) {
-          diff > 0 ? goTo(current + 1) : goTo(current - 1);
-        }
-      }, { passive: true });
-
-      goTo(0);
-    })();
   </script>
 </body>
 </html>

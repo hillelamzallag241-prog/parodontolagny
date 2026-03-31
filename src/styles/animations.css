@@ -512,380 +512,47 @@
    SCHÉMA PROGRESSION PARODONTALE — Scroll sticky
    ============================================ */
 
-/* Conteneur de scroll — 5 écrans de hauteur */
-.paro-scroll-track {
-  height: 400vh;
-  position: relative;
-}
-
-/* Sticky : reste fixe pendant le scroll */
-.paro-scroll-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.paro-scroll-sticky .container {
-  width: 100%;
-}
-
-/* Layout image + description côte à côte */
-.paro-scroll-content {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--space-2xl);
-  align-items: center;
-  margin-bottom: var(--space-lg);
-}
-
-/* Fenêtre de crop sur la dent */
-.paro-tooth-view {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1.4;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: #fff;
-  box-shadow: var(--shadow-lg);
-}
-
-/* L'image fait 500% de large pour montrer 1 dent sur 5 */
-.paro-tooth-slider {
-  position: absolute;
-  inset: 0;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.paro-tooth-slider img {
-  width: 500%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-}
-
-/* Positions pour chaque dent */
-.paro-tooth-slider[data-active="0"] { transform: translateX(0%); }
-.paro-tooth-slider[data-active="1"] { transform: translateX(-20%); }
-.paro-tooth-slider[data-active="2"] { transform: translateX(-40%); }
-.paro-tooth-slider[data-active="3"] { transform: translateX(-60%); }
-.paro-tooth-slider[data-active="4"] { transform: translateX(-80%); }
-
-/* Panel de description */
-.paro-scroll-info {
-  position: relative;
-  min-height: 280px;
-}
-
-.paro-info-panel {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.paro-info-panel.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.paro-info-badge {
-  display: inline-block;
-  width: fit-content;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--stage-color);
-  background: color-mix(in srgb, var(--stage-color) 12%, transparent);
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: var(--space-sm);
-}
-
-.paro-info-panel h4 {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--color-text);
-  margin-bottom: var(--space-sm);
-}
-
-.paro-info-panel p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-text-light);
-  margin: 0 0 var(--space-md) 0;
-}
-
-.paro-info-tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: 8px;
-}
-
-.paro-tag-ok {
-  background: #dcfce7;
-  color: #166534;
-}
-
-.paro-tag-warn {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.paro-tag-bad {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-/* Barre de progression */
-.paro-scroll-progress {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.paro-progress-bar {
-  height: 4px;
-  background: var(--color-border-light);
-  border-radius: 2px;
-  overflow: hidden;
-  margin-bottom: var(--space-sm);
-}
-
-.paro-progress-fill {
-  height: 100%;
-  width: 20%;
-  background: linear-gradient(90deg, #22c55e, #f59e0b, #ef4444, #991b1b);
-  border-radius: 2px;
-  transition: width 0.4s ease;
-}
-
-.paro-progress-dots {
-  display: flex;
-  justify-content: space-between;
-}
-
-.paro-dot {
-  background: none;
-  border: none;
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  padding: 4px 0;
-  transition: color 0.3s, transform 0.3s;
-  font-family: var(--font-body);
-}
-
-.paro-dot span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--color-border-light);
-  font-weight: 700;
-  font-size: 0.65rem;
-  margin-right: 4px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.paro-dot.active {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-.paro-dot.active span {
-  background: var(--color-primary);
-  color: white;
-}
-
-/* Masquer le fallback mobile sur desktop */
-.paro-mobile-fallback {
-  display: none;
-}
-
-/* --- Carrousel mobile interactif --- */
-.paro-mobile-tooth-view {
-  width: 100%;
-  aspect-ratio: 1 / 1.3;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: #fff;
-  box-shadow: var(--shadow-lg);
-  margin-bottom: var(--space-md);
-  position: relative;
-}
-
-.paro-mobile-slider {
-  position: absolute;
-  inset: 0;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.paro-mobile-slider img {
-  width: 500%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
-}
-
-.paro-mobile-slider[data-active="0"] { transform: translateX(0%); }
-.paro-mobile-slider[data-active="1"] { transform: translateX(-20%); }
-.paro-mobile-slider[data-active="2"] { transform: translateX(-40%); }
-.paro-mobile-slider[data-active="3"] { transform: translateX(-60%); }
-.paro-mobile-slider[data-active="4"] { transform: translateX(-80%); }
-
-/* Info panel mobile */
-.paro-mobile-info {
-  position: relative;
-  min-height: 160px;
-  margin-bottom: var(--space-md);
-}
-
-.paro-mobile-panel {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.35s ease, transform 0.35s ease;
-  pointer-events: none;
-  text-align: center;
-}
-
-.paro-mobile-panel.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  position: relative;
-}
-
-.paro-mobile-panel h4 {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: var(--space-xs) 0;
-  color: var(--color-text);
-}
-
-.paro-mobile-panel p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--color-text-light);
-  margin-bottom: var(--space-sm);
-}
-
-/* Nav : flèches + dots */
-.paro-mobile-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-md);
-}
-
-.paro-mobile-arrow {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid var(--color-border);
-  background: white;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--color-text);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-}
-
-.paro-mobile-arrow:active {
-  background: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
-}
-
-.paro-mobile-dots {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.paro-mobile-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background: var(--color-border);
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.3s ease;
-}
-
-.paro-mobile-dot.active {
-  background: var(--color-primary);
-  transform: scale(1.3);
-}
-
-/* Tablette */
-@media (max-width: 1024px) {
-  .paro-scroll-content {
-    gap: var(--space-xl);
-  }
-
-  .paro-info-panel h4 {
-    font-size: 1.3rem;
-  }
-}
-
-/* Mobile : scroll sticky désactivé, fallback affiché */
-@media (max-width: 768px) {
-  .paro-scroll {
-    display: none;
-  }
-
-  .paro-mobile-fallback {
-    display: block;
-  }
-}
-
-/* Ancien grid SVG (conservé pour compatibilité) */
-.paro-grid {
+/* Grille des stades parodontaux */
+.paro-stages-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: var(--space-md);
 }
 
-.paro-col {
-  text-align: center;
-  opacity: 0.15;
-  transform: translateY(15px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+.paro-stage-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  border-left: 3px solid var(--stage-color, var(--color-primary));
+  box-shadow: var(--shadow-sm);
 }
 
-.paro-col.visible {
-  opacity: 1;
-  transform: translateY(0);
+.paro-stage-card h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--stage-color);
+  margin-bottom: var(--space-xs);
 }
 
-.paro-col[data-stage="1"] { transition-delay: 0.08s; }
-.paro-col[data-stage="2"] { transition-delay: 0.16s; }
-.paro-col[data-stage="3"] { transition-delay: 0.24s; }
-.paro-col[data-stage="4"] { transition-delay: 0.32s; }
+.paro-stage-card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .paro-stages-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .paro-stages-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 .paro-col-title {
   font-family: var(--font-heading);
