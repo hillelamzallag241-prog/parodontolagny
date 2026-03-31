@@ -3,7 +3,7 @@
 // Structured Data (JSON-LD), Meta Tags, etc.
 // ============================================
 
-const SITE_URL = 'https://www.parodontolagny.fr';
+const SITE_URL = 'https://parodontolagny.vercel.app';
 const DOCTOLIB_URL = 'https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne/booking/motives?specialityId=1&telehealth=false&placeId=practice-268019&motiveCategoryIds%5B%5D=222400&profile_skipped=false&source=profile';
 
 // --- Organization / LocalBusiness Schema ---

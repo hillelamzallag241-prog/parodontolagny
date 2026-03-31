@@ -325,7 +325,7 @@
         <div style="border-top: 1px solid var(--color-border); padding-top: var(--space-xl);">
           <p style="font-weight: 600; margin-bottom: var(--space-md); color: var(--color-text);">Partagez ce test avec vos proches</p>
           <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
-            <a href="https://wa.me/?text=${encodeURIComponent('Faites le test parodontal gratuit en 2 minutes : https://www.parodontolagny.fr/autodiagnostic.html')}" target="_blank" rel="noopener" class="btn btn--outline" style="padding: 10px 20px; font-size: 0.85rem;">WhatsApp</a>
+            <a href="https://wa.me/?text=${encodeURIComponent('Faites le test parodontal gratuit en 2 minutes : https://parodontolagny.vercel.app/autodiagnostic.html')}" target="_blank" rel="noopener" class="btn btn--outline" style="padding: 10px 20px; font-size: 0.85rem;">WhatsApp</a>
             <button class="btn btn--outline" style="padding: 10px 20px; font-size: 0.85rem;" onclick="shareSMS()">SMS</button>
             <button class="btn btn--outline" style="padding: 10px 20px; font-size: 0.85rem;" onclick="copyLink()">Copier le lien</button>
           </div>
@@ -342,11 +342,11 @@
     }
 
     function shareSMS() {
-      window.open('sms:?body=' + encodeURIComponent('Faites le test parodontal gratuit en 2 minutes : https://www.parodontolagny.fr/autodiagnostic.html'));
+      window.open('sms:?body=' + encodeURIComponent('Faites le test parodontal gratuit en 2 minutes : https://parodontolagny.vercel.app/autodiagnostic.html'));
     }
 
     function copyLink() {
-      navigator.clipboard.writeText('https://www.parodontolagny.fr/autodiagnostic.html').then(() => {
+      navigator.clipboard.writeText('https://parodontolagny.vercel.app/autodiagnostic.html').then(() => {
         const confirm = document.getElementById('copy-confirm');
         if (confirm) { confirm.style.display = 'block'; setTimeout(() => confirm.style.display = 'none', 2000); }
       });
