@@ -234,6 +234,13 @@ p { margin-bottom: var(--space-md); }
   font-size: 1.2rem;
 }
 
+.logo-img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 /* --- Navigation --- */
 .main-nav {
   display: flex;
@@ -701,10 +708,23 @@ p { margin-bottom: var(--space-md); }
   margin-bottom: var(--space-3xl);
 }
 
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.footer-logo-cabinet {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .footer-brand .logo-text {
   color: var(--color-white);
   font-size: 1.6rem;
-  margin-bottom: var(--space-md);
   display: block;
 }
 

@@ -65,9 +65,31 @@
           <p>Le Dr. Rebecca Cohen, forte de la formation en parodontologie dispensée par l'Université de Nice-Sophia-Antipolis, vous accompagne avec humanité et rigueur depuis Lagny-sur-Marne. Sa philosophie : allier la rigueur scientifique à une approche humaine et accessible, pour que chaque visite soit un pas vers un sourire durable.</p>
           <a href="/cabinet.html" class="btn btn--outline" style="margin-top: var(--space-md);">Découvrir le cabinet →</a>
         </div>
-        <div class="content-image float-slow">
-            <img src="/src/assets/photos/reception-bienvenue.jpg" alt="Réception du cabinet Parodonto'Lagny avec écran Bienvenue" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="content-image">
+          <div class="carousel" id="carousel-cabinet">
+            <div class="carousel-track">
+              <div class="carousel-slide active">
+                <img src="/src/assets/photos/reception-bienvenue.jpg" alt="Réception du cabinet Parodonto'Lagny avec écran Bienvenue">
+              </div>
+              <div class="carousel-slide">
+                <img src="/src/assets/photos/couloir-moderne.jpg" alt="Couloir moderne du cabinet dentaire">
+              </div>
+              <div class="carousel-slide">
+                <img src="/src/assets/photos/salle-soins.jpg" alt="Salle de soins du cabinet Parodonto'Lagny">
+              </div>
+              <div class="carousel-slide">
+                <img src="/src/assets/photos/fauteuil.jpeg" alt="Fauteuil dentaire haute technologie">
+              </div>
+              <div class="carousel-slide">
+                <img src="/src/assets/photos/salle-attente.jpeg" alt="Salle d'attente du cabinet">
+              </div>
+              <div class="carousel-slide">
+                <img src="/src/assets/photos/modele-dentaire.jpg" alt="Modèle dentaire pour explication aux patients">
+              </div>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
           </div>
+        </div>
       </div>
     </div>
   </section>
@@ -119,7 +141,7 @@
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <div class="stat-number" data-count="92" data-prefix="+" data-suffix="%">0%</div>
+          <div class="stat-number" data-count="96" data-suffix="%">0%</div>
           <div class="stat-label">de taux de succès<br><small style="font-size: 0.7rem; color: var(--color-text-muted);">estimé à partir du suivi de nos patients au cabinet</small></div>
         </div>
       </div>
@@ -172,6 +194,48 @@
       'Cabinet de Parodontologie Parodonto\'Lagny',
       'Site officiel du cabinet de parodontologie Parodonto\'Lagny, dirigé par le Dr. Rebecca Cohen à Lagny-sur-Marne.'
     );
+
+    // Carrousel automatique photos cabinet
+    (function() {
+      const carousel = document.getElementById('carousel-cabinet');
+      if (!carousel) return;
+
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const dotsContainer = document.getElementById('carousel-dots');
+      let current = 0;
+      let timer;
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Photo ${i + 1}`);
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+      function goTo(idx) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = idx;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+        resetTimer();
+      }
+
+      function next() {
+        goTo((current + 1) % slides.length);
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(next, 4000);
+      }
+
+      resetTimer();
+    })();
   </script>
 </body>
 </html>

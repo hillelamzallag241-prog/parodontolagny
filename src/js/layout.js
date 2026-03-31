@@ -13,7 +13,7 @@ function getHeader(activePage = '') {
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="/" class="logo">
-        <div class="logo-icon">${icon('tooth', 28)}</div>
+        <img src="/src/assets/photos/logo-cabinet.png" alt="Logo Cabinet Dentaire du Chemin de Fer" class="logo-img">
         <div class="logo-text">Parodonto<span>'Lagny</span></div>
       </a>
 
@@ -93,7 +93,10 @@ function getFooter() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span class="logo-text">Parodonto<span>'Lagny</span></span>
+          <div class="footer-brand-row">
+            <img src="/src/assets/photos/logo-cabinet.png" alt="Logo Cabinet Dentaire du Chemin de Fer, Lagny-sur-Marne" class="footer-logo-cabinet">
+            <span class="logo-text">Parodonto<span>'Lagny</span></span>
+          </div>
           <p>Cabinet dentaire orienté parodontologie, au service de la santé de vos gencives et de la préservation de votre sourire. Dr. Rebecca Cohen vous accueille à Lagny-sur-Marne.</p>
         </div>
 

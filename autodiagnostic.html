@@ -197,10 +197,13 @@
       document.getElementById('step-intro').classList.remove('active');
       buildQuestions();
       showStep(0);
+      document.getElementById('quiz-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function buildQuestions() {
       const container = document.getElementById('quiz-questions');
+      const isLast = (i) => i === questions.length - 1;
+
       questions.forEach((q, i) => {
         const step = document.createElement('div');
         step.className = 'quiz-step';
@@ -219,29 +222,36 @@
           <div class="quiz-nav">
             ${i > 0 ? `<button class="btn btn--outline" onclick="prevStep()">← Précédent</button>` : '<span></span>'}
             <span class="quiz-step-indicator">Question ${i + 1} sur ${questions.length}</span>
-            <button class="btn btn--primary" id="next-${i}" onclick="${i === questions.length - 1 ? 'showResults()' : 'nextStep()'}" disabled>
-              ${i === questions.length - 1 ? 'Voir les résultats' : 'Suivant →'}
-            </button>
+            ${isLast(i) ? `<button class="btn btn--primary" id="next-${i}" onclick="showResults()" disabled>Voir les résultats</button>` : '<span></span>'}
           </div>
         `;
         container.appendChild(step);
       });
 
-      // Add click handlers
+      // Click handler : select + auto-advance
       document.querySelectorAll('.quiz-option').forEach(opt => {
         opt.addEventListener('click', function() {
           const qIdx = parseInt(this.dataset.question);
           const score = parseInt(this.dataset.score);
-          
+
           // Deselect siblings
           this.parentElement.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
           this.classList.add('selected');
           this.querySelector('input').checked = true;
-          
+
           answers[qIdx] = score;
-          
-          // Enable next button
-          document.getElementById(`next-${qIdx}`).disabled = false;
+
+          // Last question: enable results button
+          if (qIdx === questions.length - 1) {
+            document.getElementById(`next-${qIdx}`).disabled = false;
+            return;
+          }
+
+          // Auto-advance after short delay
+          setTimeout(() => {
+            nextStep();
+            document.getElementById('quiz-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 400);
         });
       });
     }
@@ -282,7 +292,7 @@
         level = "Risque faible";
         icon = "✅";
         className = "low";
-        text = `Bonne nouvelle ! D'après vos réponses, votre risque de maladie parodontale semble faible. Cela ne signifie pas qu'il est nul : continuez à maintenir une bonne hygiène bucco-dentaire et consultez régulièrement votre dentiste pour un contrôle. La prévention reste votre meilleur atout.`;
+        text = `Bonne nouvelle ! D'après vos réponses, votre risque de maladie parodontale semble faible. C'est encourageant ! Mais saviez-vous que les maladies parodontales touchent près de 50 % des adultes et progressent souvent sans aucun symptôme visible ? Ce test a pour vocation de sensibiliser : même en l'absence de signes apparents, un bilan parodontal régulier reste le meilleur moyen de détecter un problème à un stade précoce, quand il est encore simple à traiter. N'attendez pas que les symptômes apparaissent pour agir.`;
       } else if (totalScore <= 18) {
         level = "Risque modéré";
         icon = "⚠️";
@@ -296,7 +306,7 @@
       }
       
       const doctolibUrl = 'https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne/booking/motives?specialityId=1&telehealth=false&placeId=practice-268019&motiveCategoryIds%5B%5D=222400&profile_skipped=false&source=profile';
-      const showRdvBtn = className === 'moderate' || className === 'high';
+      const showRdvBtn = true;
 
       document.getElementById('result-content').innerHTML = `
         <div class="result-icon ${className}" style="animation: fadeIn 0.6s ease;">${icon}</div>
@@ -305,7 +315,7 @@
         <p class="result-text">${text}</p>
         ${showRdvBtn ? `
         <div style="background: var(--color-primary-subtle); border-radius: var(--radius-lg); padding: var(--space-xl); margin-bottom: var(--space-xl);">
-          <p style="font-weight: 600; color: var(--color-primary-dark); margin-bottom: var(--space-md); font-size: 1.05rem;">Nous vous recommandons de consulter</p>
+          <p style="font-weight: 600; color: var(--color-primary-dark); margin-bottom: var(--space-md); font-size: 1.05rem;">${className === 'low' ? 'Préservez votre capital dentaire avec un bilan de prévention' : 'Nous vous recommandons de consulter'}</p>
           <a href="${doctolibUrl}" target="_blank" rel="noopener" class="btn btn--accent btn--lg btn--pulse" style="width: 100%; justify-content: center;">📅 Prendre rendez-vous avec le Dr. Cohen</a>
         </div>
         ` : ''}
