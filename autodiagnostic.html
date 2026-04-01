@@ -20,7 +20,7 @@
         <a href="/">Accueil</a> <span>›</span> <span class="current">Autodiagnostic</span>
       </div>
       <h1>Autodiagnostic Parodontal</h1>
-      <p>Évaluez votre risque en répondant à 13 questions simples. Gratuit, anonyme et immédiat.</p>
+      <p>Évaluez votre risque en répondant à 14 questions simples. Gratuit, anonyme et immédiat.</p>
     </div>
   </section>
 
@@ -40,7 +40,7 @@
               Ce questionnaire d'autoévaluation vous aide à identifier d'éventuels signes de maladie parodontale. Il ne remplace pas un diagnostic professionnel mais peut vous aider à prendre conscience de l'urgence d'une consultation.
             </p>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-2xl);">
-              ⏱️ Durée estimée : 2 minutes • 13 questions • Résultat immédiat
+              ⏱️ Durée estimée : 2 minutes • 14 questions • Résultat immédiat
             </p>
             <button class="btn btn--primary btn--lg" onclick="startQuiz()">Commencer le test →</button>
           </div>
@@ -67,7 +67,7 @@
     initSEO({
       path: '/autodiagnostic.html',
       title: "Autodiagnostic Parodontal Gratuit | Testez votre risque | Parodonto'Lagny",
-      description: "Évaluez votre risque de maladie parodontale en 2 minutes grâce à notre questionnaire gratuit. 13 questions simples pour un résultat immédiat. Cabinet Parodonto'Lagny, Lagny-sur-Marne.",
+      description: "Évaluez votre risque de maladie parodontale en 2 minutes grâce à notre questionnaire gratuit. 14 questions simples pour un résultat immédiat. Cabinet Parodonto'Lagny, Lagny-sur-Marne.",
       breadcrumbs: [
         { name: 'Accueil', url: '/' },
         { name: 'Autodiagnostic', url: '/autodiagnostic.html' }
@@ -75,7 +75,7 @@
     });
     injectMedicalPageSchema(
       'Autodiagnostic de risque parodontal',
-      'Questionnaire d\'autoévaluation du risque de maladie parodontale. 13 questions pour évaluer votre risque de gingivite et parodontite.'
+      'Questionnaire d\'autoévaluation du risque de maladie parodontale. 14 questions pour évaluer votre risque de gingivite et parodontite.'
     );
   </script>
 
@@ -122,6 +122,14 @@
           { text: "Diabète", score: 2 },
           { text: "Maladie cardiovasculaire", score: 1 },
           { text: "Déficit immunitaire", score: 2 }
+        ]
+      },
+      {
+        question: "Avez-vous une sensation de bouche sèche ou prenez-vous des anxiolytiques ?",
+        options: [
+          { text: "Jamais", score: 0 },
+          { text: "Occasionnellement", score: 1 },
+          { text: "Régulièrement", score: 2 }
         ]
       },
       {
@@ -192,6 +200,7 @@
     let currentStep = 0;
     let totalScore = 0;
     let answers = [];
+    let selectedOptionIdx = [];
 
     function startQuiz() {
       document.getElementById('step-intro').classList.remove('active');
@@ -240,6 +249,7 @@
           this.querySelector('input').checked = true;
 
           answers[qIdx] = score;
+          selectedOptionIdx[qIdx] = parseInt(this.dataset.index);
 
           // Last question: enable results button
           if (qIdx === questions.length - 1) {
@@ -308,7 +318,17 @@
       const doctolibUrl = 'https://www.doctolib.fr/dentiste/lagny-sur-marne/rebecca-cohen-77400-lagny-sur-marne/booking/motives?specialityId=1&telehealth=false&placeId=practice-268019&motiveCategoryIds%5B%5D=222400&profile_skipped=false&source=profile';
       const showRdvBtn = true;
 
+      // Diabète = question index 4, option index 1
+      const hasDiabete = selectedOptionIdx[4] === 1;
+
       document.getElementById('result-content').innerHTML = `
+        ${hasDiabete ? `
+        <div style="background: linear-gradient(135deg, #dbeafe, #eff6ff); border: 2px solid #3b82f6; border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-xl); text-align: center;">
+          <p style="font-size: 1.5rem; margin-bottom: var(--space-sm);">🏥</p>
+          <p style="font-weight: 700; color: #1e40af; font-size: 1.1rem; margin-bottom: var(--space-xs);">Vous êtes diabétique ?</p>
+          <p style="color: #1e3a5f; font-size: 0.95rem; line-height: 1.6; margin: 0;">Votre <strong>bilan parodontal et vos soins parodontaux sont pris en charge par la Sécurité sociale</strong>. N'attendez pas pour consulter : les patients diabétiques sont plus à risque de développer une maladie parodontale.</p>
+        </div>
+        ` : ''}
         <div class="result-icon ${className}" style="animation: fadeIn 0.6s ease;">${icon}</div>
         <div class="result-level ${className}">${level}</div>
         <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: var(--space-md);">Score : ${totalScore} / ${getMaxScore()}</p>
@@ -356,6 +376,7 @@
       currentStep = 0;
       totalScore = 0;
       answers = [];
+      selectedOptionIdx = [];
       document.getElementById('quiz-questions').innerHTML = '';
       document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
       document.getElementById('step-intro').classList.add('active');

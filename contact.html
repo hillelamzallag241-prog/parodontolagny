@@ -29,7 +29,12 @@
         <div>
           <span class="section-label">Écrivez-nous</span>
           <h2 style="margin-bottom: var(--space-xl);">Formulaire de contact</h2>
-          <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
+          <form class="contact-form" id="contact-form" action="https://formsubmit.co/dentiste_lagny@hotmail.com" method="POST">
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="Nouveau message — Parodonto'Lagny">
+            <input type="hidden" name="_next" value="https://parodontolagny.vercel.app/contact.html?sent=1">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="text" name="_honey" style="display:none">
             <div class="form-group">
               <label for="name">Nom complet *</label>
               <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
@@ -46,10 +51,10 @@
               <label for="subject">Objet *</label>
               <select id="subject" name="subject" required>
                 <option value="">— Sélectionnez —</option>
-                <option value="rdv">Prise de rendez-vous</option>
-                <option value="info">Demande d'information</option>
-                <option value="correspondant">Espace correspondant (confrère)</option>
-                <option value="autre">Autre</option>
+                <option value="Prise de rendez-vous">Prise de rendez-vous</option>
+                <option value="Demande d'information">Demande d'information</option>
+                <option value="Espace correspondant (confrère)">Espace correspondant (confrère)</option>
+                <option value="Autre">Autre</option>
               </select>
             </div>
             <div class="form-group">
@@ -119,20 +124,12 @@
   </script>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
+    // Afficher confirmation si retour après envoi
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
       const status = document.getElementById('form-status');
-      const btn = document.getElementById('submit-btn');
-      btn.disabled = true;
-      btn.textContent = 'Envoi en cours...';
-      
-      setTimeout(() => {
-        status.style.display = 'block';
-        status.innerHTML = '<div class="glass-card" style="background: #dcfce7; border-color: #86efac;"><p style="color: #166534; margin: 0;"><strong>✅ Message envoyé avec succès !</strong><br>Nous vous répondrons dans les meilleurs délais.</p></div>';
-        btn.textContent = 'Message envoyé ✓';
-        document.getElementById('contact-form').reset();
-        setTimeout(() => { btn.disabled = false; btn.textContent = 'Envoyer le message →'; }, 3000);
-      }, 1500);
+      status.style.display = 'block';
+      status.innerHTML = '<div class="glass-card" style="background: #dcfce7; border-color: #86efac;"><p style="color: #166534; margin: 0;"><strong>Message envoyé avec succès !</strong><br>Nous vous répondrons dans les meilleurs délais.</p></div>';
+      document.getElementById('submit-btn').textContent = 'Message envoyé';
     }
   </script>
 </body>
