@@ -29,12 +29,7 @@
         <div>
           <span class="section-label">Écrivez-nous</span>
           <h2 style="margin-bottom: var(--space-xl);">Formulaire de contact</h2>
-          <form class="contact-form" id="contact-form" action="https://formsubmit.co/dentiste_lagny@hotmail.com" method="POST">
-            <!-- FormSubmit config -->
-            <input type="hidden" name="_subject" value="Nouveau message — Parodonto'Lagny">
-            <input type="hidden" name="_next" value="https://parodontolagny.vercel.app/contact.html?sent=1">
-            <input type="hidden" name="_captcha" value="true">
-            <input type="text" name="_honey" style="display:none">
+          <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
             <div class="form-group">
               <label for="name">Nom complet *</label>
               <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
@@ -124,12 +119,22 @@
   </script>
 
   <script>
-    // Afficher confirmation si retour après envoi
-    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      const body = `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone || 'Non renseigné'}\n\n${message}`;
+      const mailto = `mailto:dentiste_lagny@hotmail.com?subject=${encodeURIComponent('[Parodonto\'Lagny] ' + subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+
       const status = document.getElementById('form-status');
       status.style.display = 'block';
-      status.innerHTML = '<div class="glass-card" style="background: #dcfce7; border-color: #86efac;"><p style="color: #166534; margin: 0;"><strong>Message envoyé avec succès !</strong><br>Nous vous répondrons dans les meilleurs délais.</p></div>';
-      document.getElementById('submit-btn').textContent = 'Message envoyé';
+      status.innerHTML = '<div class="glass-card" style="background: #dbeafe; border-color: #93c5fd;"><p style="color: #1e40af; margin: 0;"><strong>Votre application email va s\'ouvrir.</strong><br>Cliquez sur « Envoyer » dans votre messagerie pour transmettre le message.</p></div>';
     }
   </script>
 </body>
