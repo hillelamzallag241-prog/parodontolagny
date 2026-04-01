@@ -323,10 +323,10 @@
 
       document.getElementById('result-content').innerHTML = `
         ${hasDiabete ? `
-        <div style="background: linear-gradient(135deg, #dbeafe, #eff6ff); border: 2px solid #3b82f6; border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-xl); text-align: center;">
-          <p style="font-size: 1.5rem; margin-bottom: var(--space-sm);">🏥</p>
-          <p style="font-weight: 700; color: #1e40af; font-size: 1.1rem; margin-bottom: var(--space-xs);">Vous êtes diabétique ?</p>
-          <p style="color: #1e3a5f; font-size: 0.95rem; line-height: 1.6; margin: 0;">Votre <strong>bilan parodontal et vos soins parodontaux sont pris en charge par la Sécurité sociale</strong>. N'attendez pas pour consulter : les patients diabétiques sont plus à risque de développer une maladie parodontale.</p>
+        <div style="background: linear-gradient(135deg, #dbeafe, #eff6ff); border: 2px solid #3b82f6; border-radius: var(--radius-lg); padding: var(--space-xl); margin-bottom: var(--space-xl); text-align: center;">
+          <p style="font-size: 2rem; margin-bottom: var(--space-sm);">🏥</p>
+          <p style="font-weight: 800; color: #1e40af; font-size: 1.3rem; margin-bottom: var(--space-sm);">Diabétique ?</p>
+          <p style="font-weight: 700; color: #1e3a5f; font-size: 1.05rem; line-height: 1.7; margin: 0;">Votre <strong style="color: #1e40af;">bilan parodontal et vos soins parodontaux sont pris en charge par la Sécurité sociale</strong>.<br>Les patients diabétiques sont plus à risque de développer une maladie parodontale. N'attendez pas pour consulter.</p>
         </div>
         ` : ''}
         <div class="result-icon ${className}" style="animation: fadeIn 0.6s ease;">${icon}</div>
