@@ -119,22 +119,44 @@
   </script>
 
   <script>
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-
-      const body = `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone || 'Non renseigné'}\n\n${message}`;
-      const mailto = `mailto:dentiste_lagny@hotmail.com?subject=${encodeURIComponent('[Parodonto\'Lagny] ' + subject)}&body=${encodeURIComponent(body)}`;
-
-      window.location.href = mailto;
-
+      const btn = document.getElementById('submit-btn');
       const status = document.getElementById('form-status');
-      status.style.display = 'block';
-      status.innerHTML = '<div class="glass-card" style="background: #dbeafe; border-color: #93c5fd;"><p style="color: #1e40af; margin: 0;"><strong>Votre application email va s\'ouvrir.</strong><br>Cliquez sur « Envoyer » dans votre messagerie pour transmettre le message.</p></div>';
+
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours...';
+
+      const formData = new FormData();
+      formData.append('access_key', 'e404fe84-ac29-465d-9246-263ebe9e562d');
+      formData.append('subject', "[Parodonto'Lagny] " + document.getElementById('subject').value);
+      formData.append('from_name', document.getElementById('name').value);
+      formData.append('name', document.getElementById('name').value);
+      formData.append('email', document.getElementById('email').value);
+      formData.append('phone', document.getElementById('phone').value || 'Non renseigné');
+      formData.append('message', document.getElementById('message').value);
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          status.style.display = 'block';
+          status.innerHTML = '<div class="glass-card" style="background: #dcfce7; border-color: #86efac;"><p style="color: #166534; margin: 0;"><strong>Message envoyé avec succès !</strong><br>Nous vous répondrons dans les plus brefs délais.</p></div>';
+          document.getElementById('contact-form').reset();
+        } else {
+          throw new Error(data.message || 'Erreur');
+        }
+      } catch (err) {
+        status.style.display = 'block';
+        status.innerHTML = '<div class="glass-card" style="background: #fee2e2; border-color: #fca5a5;"><p style="color: #991b1b; margin: 0;"><strong>Erreur lors de l\'envoi.</strong><br>Veuillez réessayer ou nous contacter directement à dentiste_lagny@hotmail.com</p></div>';
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Envoyer le message →';
     }
   </script>
 </body>
