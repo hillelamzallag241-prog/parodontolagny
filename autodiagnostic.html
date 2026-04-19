@@ -240,6 +240,9 @@
       // Click handler : select + auto-advance
       document.querySelectorAll('.quiz-option').forEach(opt => {
         opt.addEventListener('click', function() {
+          const parentStep = this.closest('.quiz-step');
+          if (!parentStep || !parentStep.classList.contains('active')) return;
+
           const qIdx = parseInt(this.dataset.question);
           const score = parseInt(this.dataset.score);
 
@@ -267,6 +270,11 @@
     }
 
     function showStep(idx) {
+      if (idx >= questions.length) {
+        showResults();
+        return;
+      }
+      if (idx < 0) idx = 0;
       document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
       const step = document.getElementById(`step-${idx}`);
       if (step) {
