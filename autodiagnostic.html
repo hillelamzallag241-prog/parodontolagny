@@ -20,7 +20,7 @@
         <a href="/">Accueil</a> <span>›</span> <span class="current">Autodiagnostic</span>
       </div>
       <h1>Autodiagnostic Parodontal</h1>
-      <p>Évaluez votre risque en répondant à 14 questions simples. Gratuit, anonyme et immédiat.</p>
+      <p>Évaluez votre risque en répondant à 16 questions simples. Gratuit, anonyme et immédiat.</p>
     </div>
   </section>
 
@@ -40,7 +40,7 @@
               Ce questionnaire d'autoévaluation vous aide à identifier d'éventuels signes de maladie parodontale. Il ne remplace pas un diagnostic professionnel mais peut vous aider à prendre conscience de l'urgence d'une consultation.
             </p>
             <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: var(--space-2xl);">
-              ⏱️ Durée estimée : 2 minutes • 14 questions • Résultat immédiat
+              ⏱️ Durée estimée : 2 minutes • 16 questions • Résultat immédiat
             </p>
             <button class="btn btn--primary btn--lg" onclick="startQuiz()">Commencer le test →</button>
           </div>
@@ -54,6 +54,10 @@
           <div class="quiz-result" id="result-content"></div>
         </div>
       </div>
+
+      <p style="text-align: center; font-size: 0.78rem; color: var(--color-text-muted); max-width: 620px; margin: var(--space-xl) auto 0; line-height: 1.6;">
+        Questionnaire d'orientation inspiré de l'auto-évaluation « Check your gum health » proposée par l'<a href="https://www.efp.org/for-patients/assess-your-gum-health/check-your-gum-health/" target="_blank" rel="noopener" style="color: var(--color-text-light); text-decoration: underline;">European Federation of Periodontology (EFP)</a>, adaptée par le cabinet.
+      </p>
     </div>
   </section>
 
@@ -67,7 +71,7 @@
     initSEO({
       path: '/autodiagnostic.html',
       title: "Autodiagnostic Parodontal Gratuit | Testez votre risque | Parodonto'Lagny",
-      description: "Évaluez votre risque de maladie parodontale en 2 minutes grâce à notre questionnaire gratuit. 14 questions simples pour un résultat immédiat. Cabinet Parodonto'Lagny, Lagny-sur-Marne.",
+      description: "Évaluez votre risque de maladie parodontale en 2 minutes grâce à notre questionnaire gratuit. 16 questions simples pour un résultat immédiat. Cabinet Parodonto'Lagny, Lagny-sur-Marne.",
       breadcrumbs: [
         { name: 'Accueil', url: '/' },
         { name: 'Autodiagnostic', url: '/autodiagnostic.html' }
@@ -75,7 +79,7 @@
     });
     injectMedicalPageSchema(
       'Autodiagnostic de risque parodontal',
-      'Questionnaire d\'autoévaluation du risque de maladie parodontale. 14 questions pour évaluer votre risque de gingivite et parodontite.'
+      'Questionnaire d\'autoévaluation du risque de maladie parodontale. 16 questions pour évaluer votre risque de gingivite et parodontite.'
     );
   </script>
 
@@ -141,6 +145,14 @@
         ]
       },
       {
+        question: "Trouvez-vous que vos gencives sont enflées, rouges ou sensibles ?",
+        options: [
+          { text: "Non, elles sont roses et fermes", score: 0 },
+          { text: "Parfois un peu rouges ou gonflées", score: 2 },
+          { text: "Oui, souvent enflées, rouges ou douloureuses", score: 3 }
+        ]
+      },
+      {
         question: "Avez-vous des caries non soignées ?",
         options: [
           { text: "Non", score: 0 },
@@ -154,6 +166,14 @@
           { text: "Non, pas du tout", score: 0 },
           { text: "Légèrement, sur une ou deux dents", score: 2 },
           { text: "Oui, nettement sur plusieurs dents", score: 3 }
+        ]
+      },
+      {
+        question: "Avez-vous un implant dentaire douloureux ou qui saigne lorsque vous le brossez ?",
+        options: [
+          { text: "Je n'ai pas d'implant", score: 0 },
+          { text: "Non, mon implant ne me gêne pas", score: 0 },
+          { text: "Oui, il est parfois douloureux ou saigne", score: 3 }
         ]
       },
       {
@@ -239,7 +259,12 @@
 
       // Click handler : select + auto-advance
       document.querySelectorAll('.quiz-option').forEach(opt => {
-        opt.addEventListener('click', function() {
+        opt.addEventListener('click', function(e) {
+          // Le <label> active l'<input> masqué => clic synthétisé qui rebulle et
+          // déclenche ce handler une 2e fois (double avance / question sautée).
+          // preventDefault empêche l'activation native de l'input.
+          e.preventDefault();
+
           const parentStep = this.closest('.quiz-step');
           if (!parentStep || !parentStep.classList.contains('active')) return;
 
@@ -260,7 +285,10 @@
             return;
           }
 
-          // Auto-advance after short delay
+          // Auto-advance après un court délai — programmé une seule fois par étape
+          // (garde-fou anti double-déclenchement, tous appareils confondus).
+          if (parentStep.dataset.advancing === '1') return;
+          parentStep.dataset.advancing = '1';
           setTimeout(() => {
             nextStep();
             document.getElementById('quiz-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
