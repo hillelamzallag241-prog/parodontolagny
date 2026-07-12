@@ -24,6 +24,16 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         faq: resolve(__dirname, 'faq.html'),
         mentions: resolve(__dirname, 'mentions-legales.html'),
+        // English (MVP)
+        en_index: resolve(__dirname, 'en/index.html'),
+        en_autodiagnostic: resolve(__dirname, 'en/autodiagnostic.html'),
+        en_contact: resolve(__dirname, 'en/contact.html'),
+        en_tarifs: resolve(__dirname, 'en/tarifs.html'),
+        // 中文 (MVP)
+        zh_index: resolve(__dirname, 'zh/index.html'),
+        zh_autodiagnostic: resolve(__dirname, 'zh/autodiagnostic.html'),
+        zh_contact: resolve(__dirname, 'zh/contact.html'),
+        zh_tarifs: resolve(__dirname, 'zh/tarifs.html'),
       }
     }
   }

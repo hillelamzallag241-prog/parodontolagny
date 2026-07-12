@@ -306,11 +306,9 @@ function injectSchema(schema) {
   document.head.appendChild(script);
 }
 
-// --- Inject canonical + hreflang ---
+// --- Inject canonical ---
 export function injectCanonical(path = '') {
   const url = `${SITE_URL}${path}`;
-
-  // Canonical
   let canonical = document.querySelector('link[rel="canonical"]');
   if (!canonical) {
     canonical = document.createElement('link');
@@ -318,27 +316,43 @@ export function injectCanonical(path = '') {
     document.head.appendChild(canonical);
   }
   canonical.href = url;
+}
 
-  // Hreflang
-  let hreflang = document.querySelector('link[hreflang="fr"]');
-  if (!hreflang) {
-    hreflang = document.createElement('link');
-    hreflang.rel = 'alternate';
-    hreflang.hreflang = 'fr';
-    document.head.appendChild(hreflang);
+// --- Inject hreflang alternates ---
+// alternates = { fr: '/contact.html', en: '/en/contact.html', zh: '/zh/contact.html' }
+export function injectHreflang(alternates, lang = 'fr', path = '/') {
+  const add = (hl, p) => {
+    let link = document.querySelector(`link[rel="alternate"][hreflang="${hl}"]`);
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'alternate';
+      link.setAttribute('hreflang', hl);
+      document.head.appendChild(link);
+    }
+    link.href = `${SITE_URL}${p}`;
+  };
+
+  if (alternates) {
+    if (alternates.fr) add('fr', alternates.fr);
+    if (alternates.en) add('en', alternates.en);
+    if (alternates.zh) add('zh', alternates.zh);
+    add('x-default', alternates.fr || alternates.en || '/');
+  } else {
+    // Page monolingue : hreflang auto-référent
+    add(lang, path);
   }
-  hreflang.href = url;
 }
 
 // --- Inject Open Graph meta tags ---
-export function injectOpenGraph({ title, description, url, type = 'website' }) {
+export function injectOpenGraph({ title, description, url, type = 'website', lang = 'fr' }) {
+  const localeMap = { fr: 'fr_FR', en: 'en_US', zh: 'zh_CN' };
   const ogImageUrl = `${SITE_URL}/og-image.png`;
   const tags = {
     'og:title': title,
     'og:description': description,
     'og:url': `${SITE_URL}${url}`,
     'og:type': type,
-    'og:locale': 'fr_FR',
+    'og:locale': localeMap[lang] || 'fr_FR',
     'og:site_name': "Parodonto'Lagny — Cabinet de Parodontologie",
     'og:image': ogImageUrl,
     'og:image:width': '1200',
@@ -368,10 +382,12 @@ export function injectOpenGraph({ title, description, url, type = 'website' }) {
 
 // --- SEO Init for common pages ---
 export function initSEO(pageConfig) {
-  const { path, title, description, breadcrumbs, type } = pageConfig;
+  const { path, title, description, breadcrumbs, type, hreflangs } = pageConfig;
+  const lang = (document.documentElement.getAttribute('lang') || 'fr').slice(0, 2);
 
   injectCanonical(path);
-  injectOpenGraph({ title, description, url: path, type });
+  injectHreflang(hreflangs, lang, path);
+  injectOpenGraph({ title, description, url: path, type, lang });
   injectOrganizationSchema();
   injectWebSiteSchema();
 
