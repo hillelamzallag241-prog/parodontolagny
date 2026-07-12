@@ -98,7 +98,7 @@ function getHeaderFR(activePage = '') {
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="/" class="logo">
-        <img src="/logo-cabinet.png" alt="Logo Cabinet Dentaire du Chemin de Fer" class="logo-img">
+        <img src="/logo-cabinet.png" alt="Logo Cabinet Dentaire du Chemin de Fer" class="logo-img" width="54" height="52">
         <div class="logo-text">Parodonto<span>'Lagny</span></div>
       </a>
 
@@ -182,7 +182,7 @@ function getHeaderIntl(activePage = '') {
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="${L('/')}" class="logo">
-        <img src="/logo-cabinet.png" alt="Parodonto'Lagny — Dr. Rebecca Cohen" class="logo-img">
+        <img src="/logo-cabinet.png" alt="Parodonto'Lagny — Dr. Rebecca Cohen" class="logo-img" width="54" height="52">
         <div class="logo-text">Parodonto<span>'Lagny</span></div>
       </a>
 
@@ -225,7 +225,7 @@ function getFooterFR() {
   return `
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-grid footer-grid--5">
         <div class="footer-brand">
           <div class="footer-brand-row">
             <img src="/logo-cabinet.png" alt="Logo Cabinet Dentaire du Chemin de Fer, Lagny-sur-Marne" class="footer-logo-cabinet">
@@ -240,6 +240,7 @@ function getFooterFR() {
           <a href="/equipe.html">L'équipe</a>
           <a href="/tarifs.html">Tarifs</a>
           <a href="/infos-pratiques.html">Infos pratiques</a>
+          <a href="/faq.html">FAQ</a>
         </div>
 
         <div class="footer-col">
@@ -247,7 +248,20 @@ function getFooterFR() {
           <a href="/maladies-parodontales.html">Maladies parodontales</a>
           <a href="/traitements.html">Traitements</a>
           <a href="/autodiagnostic.html">Autodiagnostic</a>
-          <a href="/faq.html">FAQ</a>
+          <a href="/gencives-qui-saignent.html">Gencives qui saignent</a>
+          <a href="/dechaussement-dentaire.html">Déchaussement dentaire</a>
+          <a href="/mauvaise-haleine-halitose.html">Mauvaise haleine</a>
+          <a href="/greffe-de-gencive.html">Greffe de gencive</a>
+          <a href="/surfacage-radiculaire.html">Surfaçage radiculaire</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Près de chez vous</h4>
+          <a href="/parodontologue-marne-la-vallee.html">Marne-la-Vallée</a>
+          <a href="/parodontologue-bussy-saint-georges.html">Bussy-Saint-Georges</a>
+          <a href="/parodontologue-chelles.html">Chelles</a>
+          <a href="/parodontologue-torcy.html">Torcy / Val Maubuée</a>
+          <a href="/parodontologue-thorigny-sur-marne.html">Thorigny-sur-Marne</a>
         </div>
 
         <div class="footer-col">

@@ -24,6 +24,18 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact.html'),
         faq: resolve(__dirname, 'faq.html'),
         mentions: resolve(__dirname, 'mentions-legales.html'),
+        // Pages SEO locales (villes)
+        seo_bussy: resolve(__dirname, 'parodontologue-bussy-saint-georges.html'),
+        seo_chelles: resolve(__dirname, 'parodontologue-chelles.html'),
+        seo_torcy: resolve(__dirname, 'parodontologue-torcy.html'),
+        seo_thorigny: resolve(__dirname, 'parodontologue-thorigny-sur-marne.html'),
+        seo_mlv: resolve(__dirname, 'parodontologue-marne-la-vallee.html'),
+        // Guides symptômes & traitements
+        guide_saignement: resolve(__dirname, 'gencives-qui-saignent.html'),
+        guide_dechaussement: resolve(__dirname, 'dechaussement-dentaire.html'),
+        guide_greffe: resolve(__dirname, 'greffe-de-gencive.html'),
+        guide_surfacage: resolve(__dirname, 'surfacage-radiculaire.html'),
+        guide_haleine: resolve(__dirname, 'mauvaise-haleine-halitose.html'),
         // English (MVP)
         en_index: resolve(__dirname, 'en/index.html'),
         en_autodiagnostic: resolve(__dirname, 'en/autodiagnostic.html'),

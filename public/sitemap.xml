@@ -120,6 +120,68 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- ===== Guides symptômes & traitements ===== -->
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/dechaussement-dentaire.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/gencives-qui-saignent.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/greffe-de-gencive.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/surfacage-radiculaire.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/mauvaise-haleine-halitose.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- ===== Pages locales (villes) ===== -->
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/parodontologue-marne-la-vallee.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/parodontologue-bussy-saint-georges.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/parodontologue-chelles.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/parodontologue-torcy.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/parodontologue-thorigny-sur-marne.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://dentiste-parodontologie-lagny.fr/mentions-legales.html</loc>
     <lastmod>2026-07-12</lastmod>
