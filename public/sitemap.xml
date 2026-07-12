@@ -1,111 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- ===== Pages FR ===== -->
   <url>
-    <loc>https://parodontolagny.vercel.app/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/"/>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/cabinet.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/cabinet.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/equipe.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/equipe.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/tarifs.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/tarifs.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/tarifs.html"/>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/infos-pratiques.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/infos-pratiques.html</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://parodontolagny.vercel.app/maladies-parodontales.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/maladies-parodontales.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/diagnostic.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/diagnostic.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/facteurs-risque.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/facteurs-risque.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/symptomes.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/symptomes.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/consequences.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/consequences.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/traitements.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/traitements.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/deroulement-soins.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/deroulement-soins.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/prevention.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/prevention.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/suivi.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/suivi.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/autodiagnostic.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/autodiagnostic.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/autodiagnostic.html"/>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/contact.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/contact.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/contact.html"/>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/faq.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/faq.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://parodontolagny.vercel.app/mentions-legales.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <loc>https://dentiste-parodontologie-lagny.fr/mentions-legales.html</loc>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <!-- ===== Pages EN ===== -->
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/en/index.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/"/>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/en/autodiagnostic.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/autodiagnostic.html"/>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/en/contact.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/contact.html"/>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/en/tarifs.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/tarifs.html"/>
+  </url>
+  <!-- ===== Pages ZH ===== -->
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/zh/index.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/"/>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/zh/autodiagnostic.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/autodiagnostic.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/autodiagnostic.html"/>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/zh/contact.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/contact.html"/>
+  </url>
+  <url>
+    <loc>https://dentiste-parodontologie-lagny.fr/zh/tarifs.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dentiste-parodontologie-lagny.fr/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dentiste-parodontologie-lagny.fr/en/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://dentiste-parodontologie-lagny.fr/zh/tarifs.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentiste-parodontologie-lagny.fr/tarifs.html"/>
   </url>
 </urlset>
