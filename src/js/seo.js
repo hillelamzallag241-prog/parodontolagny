@@ -272,7 +272,7 @@ export function injectFAQSchema(faqs) {
 }
 
 // --- MedicalWebPage Schema ---
-export function injectMedicalPageSchema(name, description, specialty = 'Parodontologie') {
+export function injectMedicalPageSchema(name, description, specialty = 'Parodontologie', lastReviewed = '2026-07-17') {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
@@ -288,7 +288,7 @@ export function injectMedicalPageSchema(name, description, specialty = 'Parodont
       "@type": "MedicalSpecialty",
       "name": specialty
     },
-    "lastReviewed": "2026-03-17",
+    "lastReviewed": lastReviewed,
     "reviewedBy": {
       "@type": "Person",
       "name": "Dr. Rebecca Cohen",

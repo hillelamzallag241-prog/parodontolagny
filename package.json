@@ -5,10 +5,11 @@
   "description": "Site web du cabinet Parodonto'Lagny - Dr. Rebecca Cohen",
   "scripts": {
     "dev": "vite --port 4010",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "jsdom": "^24.1.3",
     "vite": "^5"
   }
 }

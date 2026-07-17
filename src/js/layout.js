@@ -542,6 +542,7 @@ function initScrollAnimations() {
 function initParticles() {
   const containers = document.querySelectorAll('.particles');
   containers.forEach(container => {
+    if (container.childElementCount > 0) return; // déjà générées (pré-rendu)
     for (let i = 0; i < 15; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
