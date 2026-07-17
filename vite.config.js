@@ -36,6 +36,16 @@ export default defineConfig({
         guide_greffe: resolve(__dirname, 'greffe-de-gencive.html'),
         guide_surfacage: resolve(__dirname, 'surfacage-radiculaire.html'),
         guide_haleine: resolve(__dirname, 'mauvaise-haleine-halitose.html'),
+        // Guides phase 2 + hub
+        hub_conseils: resolve(__dirname, 'conseils.html'),
+        guide_parodontite: resolve(__dirname, 'parodontite.html'),
+        guide_gingivite: resolve(__dirname, 'gingivite.html'),
+        guide_mobilite: resolve(__dirname, 'dents-qui-bougent.html'),
+        guide_abces: resolve(__dirname, 'abces-parodontal.html'),
+        guide_gonflees: resolve(__dirname, 'gencives-gonflees.html'),
+        guide_diabete: resolve(__dirname, 'diabete-et-gencives.html'),
+        guide_tabac: resolve(__dirname, 'tabac-et-gencives.html'),
+        guide_grossesse: resolve(__dirname, 'gencives-grossesse.html'),
         // English (MVP)
         en_index: resolve(__dirname, 'en/index.html'),
         en_autodiagnostic: resolve(__dirname, 'en/autodiagnostic.html'),

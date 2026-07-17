@@ -121,10 +121,13 @@ function getHeaderFR(activePage = '') {
           </a>
           <div class="dropdown">
             <a href="/maladies-parodontales.html">Vue d'ensemble</a>
+            <a href="/parodontite.html">Parodontite</a>
+            <a href="/gingivite.html">Gingivite</a>
             <a href="/diagnostic.html">Diagnostic</a>
             <a href="/facteurs-risque.html">Facteurs de risque</a>
             <a href="/symptomes.html">Symptômes</a>
             <a href="/consequences.html">Conséquences</a>
+            <a href="/conseils.html">Conseils &amp; guides</a>
           </div>
         </div>
 
@@ -245,14 +248,15 @@ function getFooterFR() {
 
         <div class="footer-col">
           <h4>Parodontologie</h4>
+          <a href="/conseils.html">Tous nos guides</a>
+          <a href="/parodontite.html">Parodontite</a>
+          <a href="/gingivite.html">Gingivite</a>
           <a href="/maladies-parodontales.html">Maladies parodontales</a>
           <a href="/traitements.html">Traitements</a>
           <a href="/autodiagnostic.html">Autodiagnostic</a>
           <a href="/gencives-qui-saignent.html">Gencives qui saignent</a>
           <a href="/dechaussement-dentaire.html">Déchaussement dentaire</a>
-          <a href="/mauvaise-haleine-halitose.html">Mauvaise haleine</a>
           <a href="/greffe-de-gencive.html">Greffe de gencive</a>
-          <a href="/surfacage-radiculaire.html">Surfaçage radiculaire</a>
         </div>
 
         <div class="footer-col">
