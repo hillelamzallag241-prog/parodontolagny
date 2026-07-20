@@ -16,7 +16,7 @@ export function injectOrganizationSchema() {
     "alternateName": "Cabinet Parodonto'Lagny",
     "description": "Cabinet de parodontologie spécialisé dans le diagnostic, le traitement et le suivi des maladies parodontales à Lagny-sur-Marne. Dirigé par le Dr. Rebecca Cohen.",
     "url": SITE_URL,
-    "logo": `${SITE_URL}/logo-cabinet.png`,
+    "logo": `${SITE_URL}/logo-mark.png`,
     "image": `${SITE_URL}/og-image.png`,
     "telephone": "",
     "address": {

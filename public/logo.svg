@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 128" role="img" aria-label="Parodonto'Lagny — Parodontologie à Lagny-sur-Marne">
+  <defs>
+    <linearGradient id="markbg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#9E7070"/>
+      <stop offset="1" stop-color="#BF9494"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Marque : dent blanche sur carré arrondi rose, accent or -->
+  <rect x="8" y="16" width="96" height="96" rx="26" fill="url(#markbg)"/>
+  <path d="M8 78 q48 26 96 0 v8 q-48 26 -96 0 Z" fill="#c9a84c" opacity="0.55"/>
+  <svg x="28" y="30" width="56" height="56" viewBox="0 -960 960 960">
+    <path fill="#ffffff" d="M680-875q66 0 113 47t47 113q0 11-1.5 29.5T834-643l-55 403q-5 38-34.5 62T677-154q-23 0-42.5-10T602-192L495-348q-2-4-6.5-5.5T479-355q-4 0-16 9L359-195q-14 20-34.5 30.5T281-154q-38 0-67-24.5T180-241l-54-402q-3-24-4.5-42.5T120-715q0-66 47-113t113-47q36 0 57.5 9.5T379-845q20 11 42.5 20.5T480-815q36 0 58.5-9.5T581-845q20-11 42-20.5t57-9.5Z"/>
+  </svg>
+
+  <!-- Signature -->
+  <text x="126" y="64" font-family="'Playfair Display', Georgia, serif" font-size="42" font-weight="700" fill="#7A5353">Parodonto<tspan fill="#c9a84c">’Lagny</tspan></text>
+  <text x="128" y="94" font-family="'Inter', Arial, sans-serif" font-size="14.5" font-weight="500" letter-spacing="2" fill="#9ca3af">PARODONTOLOGIE · LAGNY-SUR-MARNE</text>
+</svg>
