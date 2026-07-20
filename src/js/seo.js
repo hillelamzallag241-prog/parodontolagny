@@ -16,6 +16,8 @@ export function injectOrganizationSchema() {
     "alternateName": "Cabinet Parodonto'Lagny",
     "description": "Cabinet de parodontologie spécialisé dans le diagnostic, le traitement et le suivi des maladies parodontales à Lagny-sur-Marne. Dirigé par le Dr. Rebecca Cohen.",
     "url": SITE_URL,
+    "logo": `${SITE_URL}/logo-cabinet.png`,
+    "image": `${SITE_URL}/og-image.png`,
     "telephone": "",
     "address": {
       "@type": "PostalAddress",
@@ -100,7 +102,11 @@ export function injectOrganizationSchema() {
       }
     ],
     "sameAs": [
-      DOCTOLIB_URL
+      DOCTOLIB_URL,
+      "https://annuairesante.ameli.fr/professionnels-de-sante/fiche-detaillee-cohen-rebecca-B7UwlTMxNjG0",
+      "https://www.sante.fr/chirurgie-dentaire/lagny-sur-marne/dr-cohen-rebecca",
+      "https://www.pagesjaunes.fr/pros/62083775",
+      "https://dentiste24.fr/77/lagny-sur-marne/cohen-rebecca-1ws8"
     ],
     "hasMap": "https://www.google.com/maps?q=46+Rue+du+Chemin+de+Fer+77400+Lagny-sur-Marne",
     "isAccessibleForFree": false,
@@ -206,6 +212,12 @@ export function injectDentistSchema() {
       "@type": "Organization",
       "name": "International Team for Implantology (ITI)"
     },
+    "sameAs": [
+      DOCTOLIB_URL,
+      "https://annuairesante.ameli.fr/professionnels-de-sante/fiche-detaillee-cohen-rebecca-B7UwlTMxNjG0",
+      "https://www.sante.fr/chirurgie-dentaire/lagny-sur-marne/dr-cohen-rebecca",
+      "https://www.pagesjaunes.fr/pros/62083775"
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "46 Rue du Chemin de Fer",
