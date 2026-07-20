@@ -36,6 +36,8 @@ export default defineConfig({
         guide_greffe: resolve(__dirname, 'greffe-de-gencive.html'),
         guide_surfacage: resolve(__dirname, 'surfacage-radiculaire.html'),
         guide_haleine: resolve(__dirname, 'mauvaise-haleine-halitose.html'),
+        // Page pilier
+        pilier_parodontologie: resolve(__dirname, 'parodontologie-lagny-sur-marne.html'),
         // Guides phase 2 + hub
         hub_conseils: resolve(__dirname, 'conseils.html'),
         guide_parodontite: resolve(__dirname, 'parodontite.html'),

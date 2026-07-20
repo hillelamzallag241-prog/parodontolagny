@@ -284,13 +284,14 @@ export function injectFAQSchema(faqs) {
 }
 
 // --- MedicalWebPage Schema ---
-export function injectMedicalPageSchema(name, description, specialty = 'Parodontologie', lastReviewed = '2026-07-17') {
+export function injectMedicalPageSchema(name, description, specialty = 'Parodontologie', lastReviewed = '2026-07-17', image = null) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     "name": name,
     "description": description,
     "url": window.location.href,
+    ...(image ? { "image": image.startsWith('http') ? image : `${SITE_URL}${image}` } : {}),
     "inLanguage": "fr-FR",
     "medicalAudience": {
       "@type": "MedicalAudience",

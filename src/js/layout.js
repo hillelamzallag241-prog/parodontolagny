@@ -98,7 +98,7 @@ function getHeaderFR(activePage = '') {
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="/" class="logo">
-        <img src="/logo-cabinet.png" alt="Logo Cabinet Dentaire du Chemin de Fer" class="logo-img" width="54" height="52">
+        <img src="/logo-mark.svg" alt="Logo Parodonto'Lagny" class="logo-img" width="54" height="54">
         <div class="logo-text">Parodonto<span>'Lagny</span></div>
       </a>
 
@@ -120,6 +120,7 @@ function getHeaderFR(activePage = '') {
             Maladies <span class="arrow">▼</span>
           </a>
           <div class="dropdown">
+            <a href="/parodontologie-lagny-sur-marne.html">La parodontologie</a>
             <a href="/maladies-parodontales.html">Vue d'ensemble</a>
             <a href="/parodontite.html">Parodontite</a>
             <a href="/gingivite.html">Gingivite</a>
@@ -185,7 +186,7 @@ function getHeaderIntl(activePage = '') {
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="${L('/')}" class="logo">
-        <img src="/logo-cabinet.png" alt="Parodonto'Lagny — Dr. Rebecca Cohen" class="logo-img" width="54" height="52">
+        <img src="/logo-mark.svg" alt="Parodonto'Lagny — Dr. Rebecca Cohen" class="logo-img" width="54" height="54">
         <div class="logo-text">Parodonto<span>'Lagny</span></div>
       </a>
 
@@ -231,7 +232,7 @@ function getFooterFR() {
       <div class="footer-grid footer-grid--5">
         <div class="footer-brand">
           <div class="footer-brand-row">
-            <img src="/logo-cabinet.png" alt="Logo Cabinet Dentaire du Chemin de Fer, Lagny-sur-Marne" class="footer-logo-cabinet">
+            <img src="/logo-mark.svg" alt="Logo Parodonto'Lagny — parodontologie à Lagny-sur-Marne" class="footer-logo-cabinet">
             <span class="logo-text">Parodonto<span>'Lagny</span></span>
           </div>
           <p>Cabinet dentaire orienté parodontologie, au service de la santé de vos gencives et de la préservation de votre sourire. Dr. Rebecca Cohen vous accueille à Lagny-sur-Marne.</p>
@@ -248,6 +249,7 @@ function getFooterFR() {
 
         <div class="footer-col">
           <h4>Parodontologie</h4>
+          <a href="/parodontologie-lagny-sur-marne.html">La parodontologie à Lagny</a>
           <a href="/conseils.html">Tous nos guides</a>
           <a href="/parodontite.html">Parodontite</a>
           <a href="/gingivite.html">Gingivite</a>
@@ -305,7 +307,7 @@ function getFooterIntl() {
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-brand-row">
-            <img src="/logo-cabinet.png" alt="Parodonto'Lagny — Dr. Rebecca Cohen" class="footer-logo-cabinet">
+            <img src="/logo-mark.svg" alt="Parodonto'Lagny — Dr. Rebecca Cohen" class="footer-logo-cabinet">
             <span class="logo-text">Parodonto<span>'Lagny</span></span>
           </div>
           <p>${t.footerTagline}</p>
