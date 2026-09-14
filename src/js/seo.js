@@ -311,6 +311,48 @@ export function injectMedicalPageSchema(name, description, specialty = 'Parodont
   injectSchema(schema);
 }
 
+// --- BlogPosting Schema (articles du blog) ---
+// opts = { headline, description, path, datePublished, dateModified, image, keywords, about }
+export function injectArticleSchema(opts) {
+  const { headline, description, path, datePublished, dateModified, image, keywords = [], about = null } = opts;
+  const imgUrl = image ? (image.startsWith('http') ? image : `${SITE_URL}${image}`) : `${SITE_URL}/og-image.png`;
+  const body = document.querySelector('.article-body');
+  const wordCount = body ? body.textContent.trim().split(/\s+/).length : undefined;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${SITE_URL}${path}#article`,
+    "headline": headline,
+    "description": description,
+    "url": `${SITE_URL}${path}`,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}${path}` },
+    "image": { "@type": "ImageObject", "url": imgUrl },
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
+    "inLanguage": "fr-FR",
+    "isAccessibleForFree": true,
+    "author": {
+      "@type": "Person",
+      "name": "Dr Rebecca Cohen",
+      "jobTitle": "Chirurgien-dentiste, D.U. de Parodontologie",
+      "url": `${SITE_URL}/equipe.html`,
+      "worksFor": { "@id": `${SITE_URL}/#organization` }
+    },
+    "reviewedBy": { "@type": "Person", "name": "Dr Rebecca Cohen", "jobTitle": "Chirurgien-dentiste" },
+    "publisher": {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      "name": "Parodonto'Lagny",
+      "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo-mark.png` }
+    },
+    "isPartOf": { "@type": "Blog", "@id": `${SITE_URL}/blog.html#blog`, "name": "Le blog Parodonto'Lagny — parodontologie expliquée" },
+    ...(keywords.length ? { "keywords": keywords.join(', ') } : {}),
+    ...(wordCount ? { "wordCount": wordCount } : {}),
+    ...(about ? { "about": about } : {})
+  };
+  injectSchema(schema);
+}
+
 // --- Utility: inject schema.org JSON-LD ---
 function injectSchema(schema) {
   const script = document.createElement('script');
@@ -357,9 +399,13 @@ export function injectHreflang(alternates, lang = 'fr', path = '/') {
 }
 
 // --- Inject Open Graph meta tags ---
-export function injectOpenGraph({ title, description, url, type = 'website', lang = 'fr' }) {
+export function injectOpenGraph({ title, description, url, type = 'website', lang = 'fr', image = null }) {
   const localeMap = { fr: 'fr_FR', en: 'en_US', zh: 'zh_CN' };
-  const ogImageUrl = `${SITE_URL}/og-image.png`;
+  // Image : paramètre explicite > balise og:image déjà présente dans le HTML > image par défaut
+  const existingOg = document.querySelector('meta[property="og:image"]');
+  const ogImageUrl = image
+    ? (image.startsWith('http') ? image : `${SITE_URL}${image}`)
+    : (existingOg && existingOg.content ? existingOg.content : `${SITE_URL}/og-image.png`);
   const tags = {
     'og:title': title,
     'og:description': description,
@@ -395,12 +441,12 @@ export function injectOpenGraph({ title, description, url, type = 'website', lan
 
 // --- SEO Init for common pages ---
 export function initSEO(pageConfig) {
-  const { path, title, description, breadcrumbs, type, hreflangs } = pageConfig;
+  const { path, title, description, breadcrumbs, type, hreflangs, image } = pageConfig;
   const lang = (document.documentElement.getAttribute('lang') || 'fr').slice(0, 2);
 
   injectCanonical(path);
   injectHreflang(hreflangs, lang, path);
-  injectOpenGraph({ title, description, url: path, type, lang });
+  injectOpenGraph({ title, description, url: path, type, lang, image });
   injectOrganizationSchema();
   injectWebSiteSchema();
 

@@ -148,6 +148,10 @@ function getHeaderFR(activePage = '') {
           ${icon('stethoscope', 16)} Autodiagnostic
         </a>
 
+        <a href="/blog.html" class="nav-link ${activePage === 'blog' ? 'active' : ''}">
+          Blog
+        </a>
+
         <a href="/contact.html" class="nav-link ${activePage === 'contact' ? 'active' : ''}">
           Contact
         </a>
@@ -250,6 +254,8 @@ function getFooterFR() {
         <div class="footer-col">
           <h4>Parodontologie</h4>
           <a href="/parodontologie-lagny-sur-marne.html">La parodontologie à Lagny</a>
+          <a href="/blog.html">Le blog</a>
+          <a href="/parodontologue.html">Qu'est-ce qu'un parodontologue ?</a>
           <a href="/conseils.html">Tous nos guides</a>
           <a href="/parodontite.html">Parodontite</a>
           <a href="/gingivite.html">Gingivite</a>
@@ -268,6 +274,13 @@ function getFooterFR() {
           <a href="/parodontologue-chelles.html">Chelles</a>
           <a href="/parodontologue-torcy.html">Torcy / Val Maubuée</a>
           <a href="/parodontologue-thorigny-sur-marne.html">Thorigny-sur-Marne</a>
+          <a href="/parodontologue-saint-thibault-des-vignes.html">Saint-Thibault-des-Vignes</a>
+          <a href="/parodontologue-montevrain.html">Montévrain</a>
+          <a href="/parodontologue-serris.html">Serris / Val d'Europe</a>
+          <a href="/parodontologue-chessy.html">Chessy</a>
+          <a href="/parodontologue-dampmart.html">Dampmart</a>
+          <a href="/parodontologue-vaires-sur-marne.html">Vaires-sur-Marne</a>
+          <a href="/parodontologue-brou-sur-chantereine.html">Brou-sur-Chantereine</a>
         </div>
 
         <div class="footer-col">
