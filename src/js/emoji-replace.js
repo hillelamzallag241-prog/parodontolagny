@@ -84,6 +84,8 @@ const emojiMap = {
   '💚': 'heartGreen',
   '📚': 'books',
   '👩‍⚕️': 'doctor',
+  '👩‍💼': 'user',
+  '👨‍💼': 'user',
   '👩\u200D⚕️': 'doctor',
   '🕐': 'clockAlt',
   '🍽️': 'plateCutlery',

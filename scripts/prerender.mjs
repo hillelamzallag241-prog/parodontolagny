@@ -64,6 +64,22 @@ for (const file of collectHtml(DIST)) {
   const { initLayout } = await import(`${LAYOUT}?page=${i++}`);
   initLayout(getActivePage(relPath));
 
+  // --- Vercel Web Analytics (statistiques de visite) ---
+  // Mesure d'audience sans cookie : aucune donnée personnelle, aucune IP
+  // stockée, agrégats anonymes. Ajouté ici pour que TOUTES les pages (y
+  // compris les futures) en héritent sans retoucher 75 fichiers HTML.
+  // Les données n'arrivent que si « Web Analytics » est activé côté Vercel.
+  if (!document.querySelector('script[data-vercel-analytics]')) {
+    const shim = document.createElement('script');
+    shim.setAttribute('data-vercel-analytics', '');
+    shim.textContent = 'window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };';
+    const tag = document.createElement('script');
+    tag.defer = true;
+    tag.src = '/_vercel/insights/script.js';
+    document.body.appendChild(shim);
+    document.body.appendChild(tag);
+  }
+
   writeFileSync(file, dom.serialize());
   n++;
   window.close();
